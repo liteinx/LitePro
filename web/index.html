@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WebHub - Access all your favorite web apps in one place. Social media, entertainment, productivity, and more.">
+    <title>WebHub - All Your Apps in One Place</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">WebHub</h1>
+                <p class="subtitle">All your apps, one place</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search apps...">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Social Media Category -->
+            <section class="category" data-category="social">
+                <div class="category-header">
+                    <span class="category-icon">💬</span>
+                    <h2 class="category-title">Social Media</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://facebook.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #1877f2, #0d5bb9)">📘</div>
+                        <span class="app-name">Facebook</span>
+                    </a>
+                    <a href="https://instagram.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)">📷</div>
+                        <span class="app-name">Instagram</span>
+                    </a>
+                    <a href="https://twitter.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #000">🐦</div>
+                        <span class="app-name">X / Twitter</span>
+                    </a>
+                    <a href="https://linkedin.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #0077b5">💼</div>
+                        <span class="app-name">LinkedIn</span>
+                    </a>
+                    <a href="https://tiktok.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #000">🎵</div>
+                        <span class="app-name">TikTok</span>
+                    </a>
+                    <a href="https://pinterest.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #e60023">📌</div>
+                        <span class="app-name">Pinterest</span>
+                    </a>
+                    <a href="https://snapchat.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #fffc00">👻</div>
+                        <span class="app-name">Snapchat</span>
+                    </a>
+                    <a href="https://reddit.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #ff4500">🤖</div>
+                        <span class="app-name">Reddit</span>
+                    </a>
+                    <a href="https://telegram.org" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #0088cc">✈️</div>
+                        <span class="app-name">Telegram</span>
+                    </a>
+                    <a href="https://whatsapp.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #25d366">💬</div>
+                        <span class="app-name">WhatsApp</span>
+                    </a>
+                    <a href="https://discord.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #5865f2">🎮</div>
+                        <span class="app-name">Discord</span>
+                    </a>
+                    <a href="https://mastodon.social" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #6364ff">🦣</div>
+                        <span class="app-name">Mastodon</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Entertainment Category -->
+            <section class="category" data-category="entertainment">
+                <div class="category-header">
+                    <span class="category-icon">🎬</span>
+                    <h2 class="category-title">Entertainment</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://youtube.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #ff0000, #cc0000)">▶️</div>
+                        <span class="app-name">YouTube</span>
+                    </a>
+                    <a href="https://netflix.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #e50914">🎬</div>
+                        <span class="app-name">Netflix</span>
+                    </a>
+                    <a href="https://spotify.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #1db954, #169c46)">🎧</div>
+                        <span class="app-name">Spotify</span>
+                    </a>
+                    <a href="https://twitch.tv" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #9146ff">📺</div>
+                        <span class="app-name">Twitch</span>
+                    </a>
+                    <a href="https://primevideo.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #00a8e1">📦</div>
+                        <span class="app-name">Prime Video</span>
+                    </a>
+                    <a href="https://disneyplus.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #113ccf, #0b1d6e)">🏰</div>
+                        <span class="app-name">Disney+</span>
+                    </a>
+                    <a href="https://hulu.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #1ce783">💚</div>
+                        <span class="app-name">Hulu</span>
+                    </a>
+                    <a href="https://hbonow.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #5a2e98, #3d1b6b)">🎭</div>
+                        <span class="app-name">HBO Max</span>
+                    </a>
+                    <a href="https://appletv.plus" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #000, #333)">🍎</div>
+                        <span class="app-name">Apple TV+</span>
+                    </a>
+                    <a href="https://soundcloud.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #ff5500, #ff7700)">☁️</div>
+                        <span class="app-name">SoundCloud</span>
+                    </a>
+                    <a href="https://dailymotion.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #00aaff">🎥</div>
+                        <span class="app-name">Dailymotion</span>
+                    </a>
+                    <a href="https://vimeo.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #00adef">🎬</div>
+                        <span class="app-name">Vimeo</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Communication Category -->
+            <section class="category" data-category="communication">
+                <div class="category-header">
+                    <span class="category-icon">📞</span>
+                    <h2 class="category-title">Communication</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://gmail.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #ea4335, #c5221f)">📧</div>
+                        <span class="app-name">Gmail</span>
+                    </a>
+                    <a href="https://outlook.live.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #0078d4">📨</div>
+                        <span class="app-name">Outlook</span>
+                    </a>
+                    <a href="https://zoom.us" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #2d8cff">📹</div>
+                        <span class="app-name">Zoom</span>
+                    </a>
+                    <a href="https://meet.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #4285f4, #34a853, #fbbc05, #ea4335)">🎥</div>
+                        <span class="app-name">Google Meet</span>
+                    </a>
+                    <a href="https://teams.microsoft.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #464775">👥</div>
+                        <span class="app-name">Microsoft Teams</span>
+                    </a>
+                    <a href="https://slack.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #4a154b">💼</div>
+                        <span class="app-name">Slack</span>
+                    </a>
+                    <a href="https://skype.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #00aff0">📞</div>
+                        <span class="app-name">Skype</span>
+                    </a>
+                    <a href="https://signal.org" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #3a76f0">🔒</div>
+                        <span class="app-name">Signal</span>
+                    </a>
+                    <a href="https://web.wechat.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #07c160">💬</div>
+                        <span class="app-name">WeChat</span>
+                    </a>
+                    <a href="https://line.me" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #00b900">💚</div>
+                        <span class="app-name">LINE</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Productivity Category -->
+            <section class="category" data-category="productivity">
+                <div class="category-header">
+                    <span class="category-icon">⚡</span>
+                    <h2 class="category-title">Productivity</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://drive.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #4285f4, #34a853, #fbbc05, #ea4335)">📁</div>
+                        <span class="app-name">Google Drive</span>
+                    </a>
+                    <a href="https://docs.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #4285f4">📝</div>
+                        <span class="app-name">Google Docs</span>
+                    </a>
+                    <a href="https://notion.so" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #000">📓</div>
+                        <span class="app-name">Notion</span>
+                    </a>
+                    <a href="https://trello.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #0079bf, #005a8e)">📋</div>
+                        <span class="app-name">Trello</span>
+                    </a>
+                    <a href="https://asana.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #27334d">✅</div>
+                        <span class="app-name">Asana</span>
+                    </a>
+                    <a href="https://monday.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #ff3d57, #ff5e78)">📊</div>
+                        <span class="app-name">Monday.com</span>
+                    </a>
+                    <a href="https://canva.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #00c4cc, #7d2ae8)">🎨</div>
+                        <span class="app-name">Canva</span>
+                    </a>
+                    <a href="https://figma.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #f24e1e, #a259ff)">🎯</div>
+                        <span class="app-name">Figma</span>
+                    </a>
+                    <a href="https://github.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #24292e">💻</div>
+                        <span class="app-name">GitHub</span>
+                    </a>
+                    <a href="https://dropbox.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #0061ff">☁️</div>
+                        <span class="app-name">Dropbox</span>
+                    </a>
+                    <a href="https://evernote.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #00a82d">📒</div>
+                        <span class="app-name">Evernote</span>
+                    </a>
+                    <a href="https://pocket.co" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #ef4056">📚</div>
+                        <span class="app-name">Pocket</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Shopping Category -->
+            <section class="category" data-category="shopping">
+                <div class="category-header">
+                    <span class="category-icon">🛒</span>
+                    <h2 class="category-title">Shopping</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://amazon.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #ff9900, #ffb84d)">📦</div>
+                        <span class="app-name">Amazon</span>
+                    </a>
+                    <a href="https://ebay.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #e53238, #0064d2, #f5af02, #86b817)">🛍️</div>
+                        <span class="app-name">eBay</span>
+                    </a>
+                    <a href="https://etsy.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #f1641e">🎁</div>
+                        <span class="app-name">Etsy</span>
+                    </a>
+                    <a href="https://aliexpress.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #ff4747, #ff6b6b)">🌏</div>
+                        <span class="app-name">AliExpress</span>
+                    </a>
+                    <a href="https://walmart.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #0071dc">🏪</div>
+                        <span class="app-name">Walmart</span>
+                    </a>
+                    <a href="https://target.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #cc0000, #e4002b)">🎯</div>
+                        <span class="app-name">Target</span>
+                    </a>
+                    <a href="https://shopify.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #95bf47">🏪</div>
+                        <span class="app-name">Shopify</span>
+                    </a>
+                    <a href="https://bestbuy.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #0046be">📱</div>
+                        <span class="app-name">Best Buy</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- News & Information Category -->
+            <section class="category" data-category="news">
+                <div class="category-header">
+                    <span class="category-icon">📰</span>
+                    <h2 class="category-title">News & Info</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://news.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #4285f4">📰</div>
+                        <span class="app-name">Google News</span>
+                    </a>
+                    <a href="https://cnn.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #cc0000">📺</div>
+                        <span class="app-name">CNN</span>
+                    </a>
+                    <a href="https://bbc.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #b80000">🌍</div>
+                        <span class="app-name">BBC</span>
+                    </a>
+                    <a href="https://nytimes.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #000">📰</div>
+                        <span class="app-name">NY Times</span>
+                    </a>
+                    <a href="https://medium.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #000">✍️</div>
+                        <span class="app-name">Medium</span>
+                    </a>
+                    <a href="https://wikipedia.org" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #fff">📚</div>
+                        <span class="app-name">Wikipedia</span>
+                    </a>
+                    <a href="https://quora.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #b92b27">❓</div>
+                        <span class="app-name">Quora</span>
+                    </a>
+                    <a href="https://producthunt.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #da552f, #f48e42)">🚀</div>
+                        <span class="app-name">Product Hunt</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Gaming Category -->
+            <section class="category" data-category="gaming">
+                <div class="category-header">
+                    <span class="category-icon">🎮</span>
+                    <h2 class="category-title">Gaming</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://twitch.tv" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #9146ff">📺</div>
+                        <span class="app-name">Twitch</span>
+                    </a>
+                    <a href="https://steamcommunity.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #171a21, #2a475e)">🎮</div>
+                        <span class="app-name">Steam</span>
+                    </a>
+                    <a href="https://epicgames.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #313131, #202020)">🎯</div>
+                        <span class="app-name">Epic Games</span>
+                    </a>
+                    <a href="https://discord.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #5865f2">💬</div>
+                        <span class="app-name">Discord</span>
+                    </a>
+                    <a href="https://roblox.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #e02f2f, #cc0000)">🧱</div>
+                        <span class="app-name">Roblox</span>
+                    </a>
+                    <a href="https://xbox.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #107c10">🎮</div>
+                        <span class="app-name">Xbox</span>
+                    </a>
+                    <a href="https://playstation.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #003791, #00439c)">🎮</div>
+                        <span class="app-name">PlayStation</span>
+                    </a>
+                    <a href="https://ign.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #000, #333)">🎯</div>
+                        <span class="app-name">IGN</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Tools & Utilities Category -->
+            <section class="category" data-category="tools">
+                <div class="category-header">
+                    <span class="category-icon">🔧</span>
+                    <h2 class="category-title">Tools & Utilities</h2>
+                </div>
+                <div class="apps-grid">
+                    <a href="https://chatgpt.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #00a67e, #10a37f)">🤖</div>
+                        <span class="app-name">ChatGPT</span>
+                    </a>
+                    <a href="https://translate.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #4285f4">🌐</div>
+                        <span class="app-name">Google Translate</span>
+                    </a>
+                    <a href="https://photos.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #4285f4, #34a853, #fbbc05, #ea4335)">🖼️</div>
+                        <span class="app-name">Google Photos</span>
+                    </a>
+                    <a href="https://maps.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #34a853">🗺️</div>
+                        <span class="app-name">Google Maps</span>
+                    </a>
+                    <a href="https://calendar.google.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #4285f4">📅</div>
+                        <span class="app-name">Google Calendar</span>
+                    </a>
+                    <a href="https://weather.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #0067b9, #0096db)">☀️</div>
+                        <span class="app-name">Weather</span>
+                    </a>
+                    <a href="https://speedtest.net" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: linear-gradient(135deg, #141526, #6c5ce7)">⚡</div>
+                        <span class="app-name">Speedtest</span>
+                    </a>
+                    <a href="https://bitly.com" class="app-card" target="_blank" rel="noopener noreferrer">
+                        <div class="app-icon" style="background: #2e323f">🔗</div>
+                        <span class="app-name">Bitly</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with 💜 for easy access to your favorite apps</p>
+            <p class="footer-note">Apps open in new tabs • Updated 2025</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
