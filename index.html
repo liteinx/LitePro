@@ -1,108 +1,70 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Lite Pro</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
- <link rel="icon" type="image/png" href="lite.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LitePro - All-in-one social media app hub. Access multiple social platforms in one lightweight application.">
+    <title>LitePro - All Social Media Apps in One Place</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="lite.png">
 </head>
-
 <body>
-  <div class="area">
-      <ul class="circles">
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-         <li></li>
-      </ul>
-   </div>
-     <div class="context">
-      <div class="heading">  
-         
-      <h1>Lite Pro</h1>
-         <p>All Apps in One Place</p>
-         
-         </div>
-      <div class="feat">
-        <div class="featr">
-            <h3>Features:</h3>
-  <li>Consolidated App Hub</li>
-  <li>Storage Efficiency</li>
-  <li>User-Friendly Interface</li>
-  <li>Resource Optimization</li>
-  <li>Offline Access</li>
-  <li>Customization Options</li>
-  <li>Data Savings</li>
-  <li>Automatic Updates</li>
-  <li>Security and Privacy</li>
-  <li>Lightweight Solution</li>
-  <li>Quick Launch</li>
-  <li>Accessibility</li>
-      </div>
-       
-   <div class="centr">
-        <button class="btn" onclick="downloadFile()">Download</button>
-
-<script>
-    function downloadFile() {
-        // Create a link element
-        var downloadLink = document.createElement('a');
-        
-        // Set the file's URL
-        downloadLink.href = 'https://liteinx.github.io/LitePro/LitePro.apk'; // Replace with your actual file URL
-        
-        // Set the file name for the download
-        downloadLink.download = 'LitePro.apk'; // Replace with your desired file name
-        
-        // Simulate a click on the link to trigger the download
-        downloadLink.click();
-    }
-
-    // Trigger the download function on page load
-    window.onload = downloadFile;
-</script>
-
-  
-        <button class="btn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">ScreenShot</button>
- </div>
- 
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-  </script>
-        
-  
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="lite.png" alt="LitePro Logo" class="logo-img">
             </div>
-      
+            <h1 class="title">LitePro</h1>
+            <p class="subtitle">All Social Media Apps in One Place</p>
+        </header>
+
+        <main class="main-content">
+            <section class="features-section">
+                <h2>Features</h2>
+                <ul class="features-list">
+                    <li><span class="feature-icon">📱</span> Consolidated App Hub</li>
+                    <li><span class="feature-icon">💾</span> Storage Efficiency</li>
+                    <li><span class="feature-icon">✨</span> User-Friendly Interface</li>
+                    <li><span class="feature-icon">⚡</span> Resource Optimization</li>
+                    <li><span class="feature-icon">📴</span> Offline Access</li>
+                    <li><span class="feature-icon">🎨</span> Customization Options</li>
+                    <li><span class="feature-icon">📊</span> Data Savings</li>
+                    <li><span class="feature-icon">🔄</span> Automatic Updates</li>
+                    <li><span class="feature-icon">🔒</span> Security and Privacy</li>
+                    <li><span class="feature-icon">🪶</span> Lightweight Solution</li>
+                    <li><span class="feature-icon">🚀</span> Quick Launch</li>
+                    <li><span class="feature-icon">♿</span> Accessibility</li>
+                </ul>
+            </section>
+
+            <section class="actions-section">
+                <button id="downloadBtn" class="btn btn-primary">
+                    <span class="btn-text">Download LitePro</span>
+                    <span class="btn-subtitle">APK • 9.2 MB</span>
+                </button>
+                <button id="screenshotBtn" class="btn btn-secondary" aria-label="View Screenshot">
+                    View Screenshot
+                </button>
+            </section>
+
+            <div id="downloadStatus" class="status-message" role="alert" aria-live="polite"></div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 LitePro. All rights reserved.</p>
+        </footer>
     </div>
 
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'"
-class="close" title="Close Modal">&times;</span>
- 
-  <!-- Modal Content -->
-  <div class="modal-content animate">
-    <img src="sc.jpg" alt="Screenshot" class="img">
-  </div>
-</div>
+    <!-- Modal for Screenshot -->
+    <div id="screenshotModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close" aria-label="Close modal">&times;</button>
+            <h2 id="modalTitle" class="modal-title">LitePro Screenshot</h2>
+            <img src="sc.jpg" alt="LitePro Application Screenshot" class="screenshot-img">
+        </div>
+    </div>
 
-  
+    <script src="script.js"></script>
 </body>
-
 </html>
