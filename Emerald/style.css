@@ -230,6 +230,60 @@ body {
     flex: 1;
 }
 
+.btn-subtitle {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* ===== Download Status ===== */
+.download-status {
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-status.success {
+    display: block;
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+.download-status.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+.download-status.loading {
+    display: block;
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ===== Stats ===== */
 .stats {
     display: grid;

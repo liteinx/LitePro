@@ -5,12 +5,30 @@
 
     // Configuration
     const CONFIG = {
+        APK_URL: 'Emerald_1767507934.apk',
+        APK_NAME: 'Emerald_1767507934.apk',
+        DOWNLOAD_TIMEOUT: 30000,
         animationThreshold: 0.1,
         animationRootMargin: '0px 0px -50px 0px'
     };
 
+    // DOM Elements
+    const elements = {
+        downloadBtn: null,
+        downloadBtnLarge: null,
+        downloadStatus: null
+    };
+
     // Initialize the application
     function init() {
+        // Cache DOM elements
+        elements.downloadBtn = document.getElementById('downloadBtn');
+        elements.downloadBtnLarge = document.getElementById('downloadBtnLarge');
+        elements.downloadStatus = document.getElementById('downloadStatus');
+
+        // Attach event listeners
+        attachEventListeners();
+
         // Add entrance animations
         addEntranceAnimations();
 
@@ -22,6 +40,89 @@
 
         // Add scroll progress indicator
         addScrollProgress();
+
+        // Setup download handlers
+        setupDownloadHandlers();
+    }
+
+    // Attach all event listeners
+    function attachEventListeners() {
+        // Download buttons
+        if (elements.downloadBtn) {
+            elements.downloadBtn.addEventListener('click', handleDownload);
+        }
+        if (elements.downloadBtnLarge) {
+            elements.downloadBtnLarge.addEventListener('click', handleDownload);
+        }
+    }
+
+    // Setup download handlers
+    function setupDownloadHandlers() {
+        // Handle both download buttons
+        [elements.downloadBtn, elements.downloadBtnLarge].forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', handleDownload);
+            }
+        });
+    }
+
+    // Handle APK download
+    async function handleDownload(e) {
+        e.preventDefault();
+
+        if (!elements.downloadStatus) return;
+
+        // Show loading state
+        const btn = e.currentTarget;
+        const originalContent = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Starting download...</span>';
+
+        showStatus('Initializing download...', 'loading');
+
+        try {
+            // Small delay for UX
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            // Create download link
+            const downloadLink = document.createElement('a');
+            downloadLink.href = CONFIG.APK_URL;
+            downloadLink.download = CONFIG.APK_NAME;
+            downloadLink.rel = 'noopener noreferrer';
+
+            // Trigger download
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+
+            // Show success message
+            showStatus('✓ Download started! Check your downloads folder.', 'success');
+
+        } catch (error) {
+            console.error('Download failed:', error);
+            showStatus('✗ Download failed. Please try again.', 'error');
+        } finally {
+            // Reset button state after delay
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = originalContent;
+            }, 2000);
+        }
+    }
+
+    // Show status message
+    function showStatus(message, type) {
+        if (!elements.downloadStatus) return;
+
+        elements.downloadStatus.textContent = message;
+        elements.downloadStatus.className = `download-status ${type}`;
+
+        // Auto-hide success messages after 5 seconds
+        if (type === 'success') {
+            setTimeout(() => {
+                elements.downloadStatus.className = 'download-status';
+            }, 5000);
+        }
     }
 
     // Add entrance animations for elements
@@ -223,6 +324,13 @@
 
     // Add keyboard shortcuts
     document.addEventListener('keydown', (e) => {
+        // Press 'D' to trigger download
+        if (e.key === 'd' || e.key === 'D') {
+            if (elements.downloadBtn) {
+                elements.downloadBtn.click();
+            }
+        }
+
         // Press 'S' to scroll to features
         if (e.key === 's' || e.key === 'S') {
             const featuresSection = document.querySelector('#features');
