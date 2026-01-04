@@ -452,6 +452,25 @@ body {
     line-height: 1.6;
 }
 
+.install-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.install-note p {
+    color: var(--text-secondary);
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.install-note strong {
+    color: var(--primary-light);
+}
+
 /* ===== Safety Section ===== */
 .safety-section {
     background: var(--glass-bg);
