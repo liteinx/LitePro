@@ -5,11 +5,18 @@
 
     // Configuration
     const CONFIG = {
-        APK_URL: 'Emerald_1767507934.apk',
-        APK_NAME: 'Emerald_1767507934.apk',
+        CONFIG_FILE: 'apks.json',
         DOWNLOAD_TIMEOUT: 30000,
         animationThreshold: 0.1,
         animationRootMargin: '0px 0px -50px 0px'
+    };
+
+    // State
+    let state = {
+        currentAPK: null,
+        currentCode: null,
+        apkName: null,
+        appData: null
     };
 
     // DOM Elements
@@ -25,6 +32,9 @@
         elements.downloadBtn = document.getElementById('downloadBtn');
         elements.downloadBtnLarge = document.getElementById('downloadBtnLarge');
         elements.downloadStatus = document.getElementById('downloadStatus');
+
+        // Load APK configuration
+        loadAPKConfig();
 
         // Attach event listeners
         attachEventListeners();
@@ -43,6 +53,81 @@
 
         // Setup download handlers
         setupDownloadHandlers();
+    }
+
+    // Load APK configuration from apks.json
+    async function loadAPKConfig() {
+        try {
+            // Get URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('r');
+            state.currentCode = code;
+
+            // Fetch apks.json
+            const response = await fetch(CONFIG.CONFIG_FILE);
+
+            if (!response.ok) {
+                throw new Error('Failed to load APK configuration');
+            }
+
+            const config = await response.json();
+            state.appData = config;
+
+            // Determine which APK to use
+            if (code && config.apps && config.apps[code]) {
+                // Code exists, use specific APK
+                const app = config.apps[code];
+                state.currentAPK = app.filename;
+                state.apkName = app.name || app.filename;
+
+                console.log(`Loading custom APK: ${state.apkName} (code: ${code})`);
+
+                // Update UI to show custom app
+                updateUIForCustomApp(app);
+
+            } else {
+                // No code or invalid code, use default
+                state.currentAPK = config.default;
+                state.apkName = 'Emerald Chat (Default)';
+
+                if (code) {
+                    console.warn(`Invalid code: ${code}. Using default APK.`);
+                    showStatus(`⚠️ Invalid code. Using default version.`, 'loading', 3000);
+                } else {
+                    console.log('Using default APK');
+                }
+            }
+
+        } catch (error) {
+            console.error('Error loading APK config:', error);
+
+            // Fallback to default APK
+            state.currentAPK = 'Emerald_1767507934.apk';
+            state.apkName = 'Emerald Chat';
+            state.currentCode = null;
+        }
+    }
+
+    // Update UI for custom app
+    function updateUIForCustomApp(app) {
+        // Update title
+        const title = document.querySelector('.title');
+        if (title && app.name) {
+            title.textContent = app.name;
+        }
+
+        // Update tagline to show it's a custom build
+        const tagline = document.querySelector('.tagline');
+        if (tagline) {
+            tagline.textContent = `Custom Build • Code: ${state.currentCode}`;
+        }
+
+        // Add notification
+        if (app.name) {
+            setTimeout(() => {
+                showStatus(`💎 Loading: ${app.name}`, 'loading', 2000);
+            }, 500);
+        }
     }
 
     // Attach all event listeners
@@ -72,22 +157,35 @@
 
         if (!elements.downloadStatus) return;
 
+        // Ensure APK config is loaded
+        if (!state.currentAPK) {
+            showStatus('⏳ Loading configuration...', 'loading');
+
+            // Wait a bit and retry
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            if (!state.currentAPK) {
+                showStatus('✗ Failed to load APK configuration', 'error');
+                return;
+            }
+        }
+
         // Show loading state
         const btn = e.currentTarget;
         const originalContent = btn.innerHTML;
         btn.disabled = true;
         btn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Starting download...</span>';
 
-        showStatus('Initializing download...', 'loading');
+        showStatus(`📥 Downloading: ${state.apkName}...`, 'loading');
 
         try {
             // Small delay for UX
-            await new Promise(resolve => setTimeout(resolve, 500));
+            await new Promise(resolve => setTimeout(resolve, 800));
 
             // Create download link
             const downloadLink = document.createElement('a');
-            downloadLink.href = CONFIG.APK_URL;
-            downloadLink.download = CONFIG.APK_NAME;
+            downloadLink.href = state.currentAPK;
+            downloadLink.download = state.currentAPK;
             downloadLink.rel = 'noopener noreferrer';
 
             // Trigger download
@@ -96,7 +194,11 @@
             document.body.removeChild(downloadLink);
 
             // Show success message
-            showStatus('✓ Download started! Check your downloads folder.', 'success');
+            const codeText = state.currentCode ? ` (Code: ${state.currentCode})` : '';
+            showStatus(`✓ Download started: ${state.apkName}${codeText}`, 'success');
+
+            // Log download (for static sites, we can't actually save this, but we log it)
+            console.log(`Download initiated: ${state.currentAPK} | Code: ${state.currentCode || 'default'}`);
 
         } catch (error) {
             console.error('Download failed:', error);
@@ -111,17 +213,19 @@
     }
 
     // Show status message
-    function showStatus(message, type) {
+    function showStatus(message, type, duration = 5000) {
         if (!elements.downloadStatus) return;
 
         elements.downloadStatus.textContent = message;
         elements.downloadStatus.className = `download-status ${type}`;
 
-        // Auto-hide success messages after 5 seconds
-        if (type === 'success') {
+        // Auto-hide messages after duration
+        if (type === 'success' || type === 'loading') {
             setTimeout(() => {
-                elements.downloadStatus.className = 'download-status';
-            }, 5000);
+                if (elements.downloadStatus.classList.contains(type)) {
+                    elements.downloadStatus.className = 'download-status';
+                }
+            }, duration);
         }
     }
 
