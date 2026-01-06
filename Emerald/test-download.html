@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Download - Emerald APK</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0f0f23;
+            color: #f1f5f9;
+        }
+        .test-section {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #059669;
+        }
+        .log {
+            background: #000;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            margin: 5px 0;
+        }
+        .success { color: #4ade80; }
+        .error { color: #f87171; }
+        .info { color: #60a5fa; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Emerald APK Download Test</h1>
+
+    <div class="test-section">
+        <h2>Test Different Downloads</h2>
+        <p>Click each button to test the download:</p>
+
+        <h3>1. Default APK (No code)</h3>
+        <button onclick="testDownload('default')">Test Default Download</button>
+
+        <h3>2. Custom APK with Code: KQNQT</h3>
+        <button onclick="testDownload('KQNQT')">Test Code KQNQT</button>
+        <p style="font-size: 12px; color: #94a3b8;">Should download: Emerald_1767675940.apk</p>
+
+        <h3>3. Custom APK with Code: FMBWZ</h3>
+        <button onclick="testDownload('FMBWZ')">Test Code FMBWZ</button>
+        <p style="font-size: 12px; color: #94a3b8;">Should download: Emerald_1767676515.apk</p>
+
+        <h3>4. Custom APK with Code: G8BH7</h3>
+        <button onclick="testDownload('G8BH7')">Test Code G8BH7</button>
+        <p style="font-size: 12px; color: #94a3b8;">Should download: Emerald_1767677058.apk</p>
+
+        <h3>5. Invalid Code</h3>
+        <button onclick="testDownload('INVALID')">Test Invalid Code</button>
+        <p style="font-size: 12px; color: #94a3b8;">Should download default: Emerald_1767507934.apk</p>
+    </div>
+
+    <div class="test-section">
+        <h2>📋 Test Log</h2>
+        <div id="log" class="log"></div>
+        <button onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <div class="test-section">
+        <h2>📊 APK Configuration</h2>
+        <div id="config" class="log">Loading...</div>
+    </div>
+
+    <script>
+        async function testDownload(code) {
+            addLog(`Testing download with code: ${code || 'default'}`, 'info');
+
+            try {
+                // Fetch apks.json
+                const response = await fetch('apks.json');
+
+                if (!response.ok) {
+                    throw new Error('Failed to load apks.json');
+                }
+
+                const config = await response.json();
+                addLog(`✓ apks.json loaded successfully`, 'success');
+                displayConfig(config);
+
+                // Determine which APK to download
+                let apkFilename;
+                if (code && code !== 'default' && config.apps && config.apps[code]) {
+                    apkFilename = config.apps[code].filename;
+                    addLog(`✓ Code "${code}" found → APK: ${apkFilename}`, 'success');
+                } else {
+                    apkFilename = config.default;
+                    if (code && code !== 'default') {
+                        addLog(`⚠ Code "${code}" not found → Using default`, 'error');
+                    } else {
+                        addLog(`✓ Using default APK`, 'success');
+                    }
+                }
+
+                // Check if file exists
+                addLog(`Checking if file exists: ${apkFilename}...`, 'info');
+
+                const fileCheck = await fetch(apkFilename, { method: 'HEAD' });
+
+                if (fileCheck.ok) {
+                    addLog(`✓ File exists: ${apkFilename}`, 'success');
+                    addLog(`File size: ${fileCheck.headers.get('Content-Length')} bytes`, 'info');
+                } else {
+                    addLog(`✗ File NOT found: ${apkFilename}`, 'error');
+                    return;
+                }
+
+                // Trigger download
+                addLog(`Triggering download for: ${apkFilename}`, 'info');
+
+                const downloadLink = document.createElement('a');
+                downloadLink.href = apkFilename;
+                downloadLink.download = apkFilename;
+                downloadLink.target = '_blank';
+
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+
+                addLog(`✓ Download initiated successfully!`, 'success');
+
+            } catch (error) {
+                addLog(`✗ Error: ${error.message}`, 'error');
+                console.error(error);
+            }
+        }
+
+        async function loadConfig() {
+            try {
+                const response = await fetch('apks.json');
+                const config = await response.json();
+                displayConfig(config);
+            } catch (error) {
+                document.getElementById('config').innerHTML =
+                    `<span class="error">Error loading config: ${error.message}</span>`;
+            }
+        }
+
+        function displayConfig(config) {
+            let html = `<span class="success">Default: ${config.default}</span><br><br>`;
+            html += '<strong>Custom APKs:</strong><br>';
+
+            const apps = Object.entries(config.apps || {});
+            if (apps.length === 0) {
+                html += '<span class="info">No custom APKs configured</span>';
+            } else {
+                apps.forEach(([code, app]) => {
+                    html += `<span class="success">• ${code}</span>: ${app.filename} (${app.name})<br>`;
+                });
+            }
+
+            document.getElementById('config').innerHTML = html;
+        }
+
+        function addLog(message, type = 'info') {
+            const log = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('log').innerHTML = '';
+        }
+
+        // Load config on page load
+        loadConfig();
+    </script>
+</body>
+</html>

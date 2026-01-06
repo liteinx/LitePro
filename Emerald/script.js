@@ -78,21 +78,17 @@
                 // Code exists, use specific APK
                 const app = config.apps[code];
                 state.currentAPK = app.filename;
-                state.apkName = app.name || app.filename;
+                state.apkName = 'Emerald Chat'; // Always show default name
 
-                console.log(`Loading custom APK: ${state.apkName} (code: ${code})`);
-
-                // Update UI to show custom app
-                updateUIForCustomApp(app);
+                console.log(`Loading custom APK: ${app.filename} (code: ${code})`);
 
             } else {
                 // No code or invalid code, use default
                 state.currentAPK = config.default;
-                state.apkName = 'Emerald Chat (Default)';
+                state.apkName = 'Emerald Chat';
 
                 if (code) {
                     console.warn(`Invalid code: ${code}. Using default APK.`);
-                    showStatus(`⚠️ Invalid code. Using default version.`, 'loading', 3000);
                 } else {
                     console.log('Using default APK');
                 }
@@ -105,28 +101,6 @@
             state.currentAPK = 'Emerald_1767507934.apk';
             state.apkName = 'Emerald Chat';
             state.currentCode = null;
-        }
-    }
-
-    // Update UI for custom app
-    function updateUIForCustomApp(app) {
-        // Update title
-        const title = document.querySelector('.title');
-        if (title && app.name) {
-            title.textContent = app.name;
-        }
-
-        // Update tagline to show it's a custom build
-        const tagline = document.querySelector('.tagline');
-        if (tagline) {
-            tagline.textContent = `Custom Build • Code: ${state.currentCode}`;
-        }
-
-        // Add notification
-        if (app.name) {
-            setTimeout(() => {
-                showStatus(`💎 Loading: ${app.name}`, 'loading', 2000);
-            }, 500);
         }
     }
 
@@ -161,11 +135,12 @@
         if (!state.currentAPK) {
             showStatus('⏳ Loading configuration...', 'loading');
 
-            // Wait a bit and retry
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Wait for config to load
+            await new Promise(resolve => setTimeout(resolve, 2000));
 
             if (!state.currentAPK) {
                 showStatus('✗ Failed to load APK configuration', 'error');
+                console.error('APK config not loaded');
                 return;
             }
         }
@@ -176,29 +151,43 @@
         btn.disabled = true;
         btn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Starting download...</span>';
 
-        showStatus(`📥 Downloading: ${state.apkName}...`, 'loading');
+        showStatus(`📥 Downloading: Emerald Chat...`, 'loading');
 
         try {
-            // Small delay for UX
-            await new Promise(resolve => setTimeout(resolve, 800));
+            // Debug logging
+            console.log(`Downloading APK: ${state.currentAPK}`);
+            console.log(`Full path will be: ${window.location.pathname}${state.currentAPK}`);
 
-            // Create download link
+            // Small delay for UX
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            // Create download link with proper path
             const downloadLink = document.createElement('a');
+
+            // Use the APK filename directly (relative path)
             downloadLink.href = state.currentAPK;
             downloadLink.download = state.currentAPK;
             downloadLink.rel = 'noopener noreferrer';
 
+            // Add additional attributes to ensure download
+            downloadLink.target = '_blank';
+
+            console.log(`Download link href: ${downloadLink.href}`);
+            console.log(`Download will trigger for: ${state.currentAPK}`);
+
             // Trigger download
             document.body.appendChild(downloadLink);
             downloadLink.click();
+
+            // Wait a bit before removing to ensure download starts
+            await new Promise(resolve => setTimeout(resolve, 100));
             document.body.removeChild(downloadLink);
 
-            // Show success message
-            const codeText = state.currentCode ? ` (Code: ${state.currentCode})` : '';
-            showStatus(`✓ Download started: ${state.apkName}${codeText}`, 'success');
+            // Show success message (without code to keep it clean)
+            showStatus('✓ Download started! Check your downloads folder.', 'success');
 
-            // Log download (for static sites, we can't actually save this, but we log it)
-            console.log(`Download initiated: ${state.currentAPK} | Code: ${state.currentCode || 'default'}`);
+            // Log download details
+            console.log(`✓ Download initiated successfully: ${state.currentAPK}`);
 
         } catch (error) {
             console.error('Download failed:', error);
