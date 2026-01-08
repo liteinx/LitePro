@@ -1,4 +1,11 @@
 {
   "default": "Temu_NewYear.apk",
-  "apps": {}
+  "apps": {
+    "G8CLR": {
+      "filename": "Temu_1767846819.apk",
+      "name": "carlos",
+      "added": "2026-01-08T04:40:29Z",
+      "downloads": 0
+    }
+  }
 }
