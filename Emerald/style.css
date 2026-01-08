@@ -730,3 +730,86 @@ body {
         min-width: 280px;
     }
 }
+
+/* ===== Language Switcher ===== */
+.language-switcher {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 400px;
+}
+
+.lang-btn {
+    padding: 0.5rem 0.75rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: var(--primary);
+}
+
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* RTL support */
+[dir="rtl"] .language-switcher {
+    left: 1rem;
+    right: auto;
+}
+
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .lang-btn {
+    font-family: 'Arial', sans-serif;
+}
+
+[dir="rtl"] .feature-icon,
+[dir="rtl"] .step-number,
+[dir="rtl"] .btn-icon {
+    margin-left: 0.75rem;
+    margin-right: 0;
+}
+
+[dir="rtl"] .feature-card,
+[dir="rtl"] .step {
+    text-align: right;
+}
+
+[dir="rtl"] .cta-buttons,
+[dir="rtl"] .stats {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .language-switcher {
+        top: 0.5rem;
+        right: 0.5rem;
+        max-width: calc(100% - 5rem);
+    }
+
+    [dir="rtl"] .language-switcher {
+        left: 0.5rem;
+        right: auto;
+    }
+}

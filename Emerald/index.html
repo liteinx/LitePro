@@ -17,24 +17,36 @@
     </div>
 
     <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="en" title="English">EN</button>
+            <button class="lang-btn" data-lang="ar" title="العربية">عربي</button>
+            <button class="lang-btn" data-lang="es" title="Español">ES</button>
+            <button class="lang-btn" data-lang="fr" title="Français">FR</button>
+            <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+            <button class="lang-btn" data-lang="zh" title="中文">中文</button>
+            <button class="lang-btn" data-lang="hi" title="हिन्दी">हिन्दी</button>
+            <button class="lang-btn" data-lang="pt" title="Português">PT</button>
+        </div>
+
         <!-- Hero Section -->
         <header class="hero">
             <div class="hero-content">
                 <div class="logo-section">
                     <div class="logo">💎</div>
-                    <h1 class="title">Emerald Chat</h1>
+                    <h1 class="title" data-i18n="title">Emerald Chat</h1>
                 </div>
-                <p class="tagline">Connect instantly with people around the world</p>
-                <p class="subtitle">Anonymous • Fast • Fun</p>
+                <p class="tagline" data-i18n="tagline">Connect instantly with people around the world</p>
+                <p class="subtitle" data-i18n="subtitle">Anonymous • Fast • Fun</p>
 
                 <div class="cta-buttons">
                     <button id="downloadBtn" class="btn btn-primary">
                         <span class="btn-icon">📥</span>
-                        <span class="btn-text">Download App</span>
+                        <span class="btn-text" data-i18n="download">Download App</span>
                     </button>
                     <a href="#features" class="btn btn-secondary">
                         <span class="btn-icon">✨</span>
-                        <span class="btn-text">Explore Features</span>
+                        <span class="btn-text" data-i18n="explore">Explore Features</span>
                     </a>
                 </div>
 
@@ -59,8 +71,8 @@
 
         <!-- Features Section -->
         <section id="features" class="features-section">
-            <h2 class="section-title">Powerful Features</h2>
-            <p class="section-subtitle">Everything you need for amazing conversations</p>
+            <h2 class="section-title" data-i18n="features">Powerful Features</h2>
+            <p class="section-subtitle" data-i18n="featuresSub">Everything you need for amazing conversations</p>
 
             <div class="features-grid">
                 <!-- Feature 1 -->
@@ -151,31 +163,30 @@
 
         <!-- How It Works Section -->
         <section class="how-it-works">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">Get started in 4 simple steps</p>
+            <h2 class="section-title" data-i18n="howItWorks">How It Works</h2>
+            <p class="section-subtitle" data-i18n="howItWorksSub">Get started in 3 simple steps</p>
 
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3 class="step-title">Download the App</h3>
-                    <p class="step-description">Click the download button above to get the Emerald Chat APK file (10 MB).</p>
+                    <p class="step-description">Click the download button to get the Emerald Chat APK file.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">Enable Unknown Sources</h3>
                     <p class="step-description">Go to Settings → Security → Allow installation from unknown sources.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3 class="step-title">Install the APK</h3>
-                    <p class="step-description">Open the downloaded file and tap "Install" to complete the installation.</p>
+                    <p class="step-description">Launch Emerald Chat, create your account, and start chatting!</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3 class="step-title">Start Chatting</h3>
+                    <h3 class="step-title" data-i18n="step3Title">Open & Register</h3>
                     <p class="step-description">Open Emerald Chat, choose your mode, and start meeting new people instantly!</p>
                 </div>
             </div>
@@ -189,8 +200,8 @@
         <!-- Safety Section -->
         <section class="safety-section">
             <div class="safety-content">
-                <h2 class="section-title">🛡️ Safety First</h2>
-                <p class="section-subtitle">Your safety is our top priority</p>
+                <h2 class="section-title">🛡️ <span data-i18n="safety">Safety First</span></h2>
+                <p class="section-subtitle" data-i18n="safetySub">Your safety is our top priority</p>
 
                 <div class="safety-features">
                     <div class="safety-item">
@@ -224,12 +235,12 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Meet Someone New?</h2>
-                <p class="cta-description">Join millions of users worldwide and start your conversation today</p>
+                <h2 class="cta-title" data-i18n="ready">Ready to Meet Someone New?</h2>
+                <p class="cta-description" data-i18n="readySub">Join millions of users worldwide and start your conversation today</p>
 
                 <button id="downloadBtnLarge" class="btn btn-large btn-primary">
                     <span class="btn-icon">💎</span>
-                    <span class="btn-text">Download Emerald Chat</span>
+                    <span class="btn-text" data-i18n="downloadLarge">Download Emerald Chat</span>
                     <span class="btn-subtitle">APK • 10 MB</span>
                 </button>
 
@@ -249,19 +260,20 @@
                     <span class="logo-icon">💎</span>
                     <span class="footer-title">Emerald Chat</span>
                 </div>
-                <p class="footer-text">The modern way to meet new people online</p>
+                <p class="footer-text" data-i18n="madeBy">The modern way to meet new people online</p>
                 <div class="footer-links">
-                    <a href="https://emeraldchat.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                    <a href="https://emeraldchat.com" target="_blank" rel="noopener noreferrer" data-i18n="visitSite">Visit Website</a>
                     <span>•</span>
-                    <a href="https://emeraldchat.com/faq" target="_blank" rel="noopener noreferrer">FAQ</a>
+                    <a href="https://emeraldchat.com/faq" target="_blank" rel="noopener noreferrer" data-i18n="faq">FAQ</a>
                     <span>•</span>
-                    <a href="https://emeraldchat.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                    <a href="https://emeraldchat.com/privacy" target="_blank" rel="noopener noreferrer" data-i18n="privacy">Privacy Policy</a>
                 </div>
-                <p class="footer-note">This is a showcase page. Emerald Chat is a trademark of its respective owners.</p>
+                <p class="footer-note" data-i18n="footerNote">This is a showcase page. Emerald Chat is a trademark of its respective owners.</p>
             </div>
         </footer>
     </div>
 
+    <script src="languages.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

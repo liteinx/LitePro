@@ -1,4 +1,4 @@
-// Emerald Chat Showcase Script
+// Emerald Chat Showcase Script with Multi-language Support
 
 (function() {
     'use strict';
@@ -16,7 +16,8 @@
         currentAPK: null,
         currentCode: null,
         apkName: null,
-        appData: null
+        appData: null,
+        currentLanguage: 'en'
     };
 
     // DOM Elements
@@ -28,6 +29,12 @@
 
     // Initialize the application
     function init() {
+        // Detect and apply language
+        detectAndApplyLanguage();
+
+        // Setup language switcher
+        setupLanguageSwitcher();
+
         // Cache DOM elements
         elements.downloadBtn = document.getElementById('downloadBtn');
         elements.downloadBtnLarge = document.getElementById('downloadBtnLarge');
@@ -53,6 +60,102 @@
 
         // Setup download handlers
         setupDownloadHandlers();
+    }
+
+    // Detect browser/system language and apply translations
+    function detectAndApplyLanguage() {
+        // Get browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        const langCode = browserLang.split('-')[0]; // Get primary language (e.g., 'ar' from 'ar-SA')
+
+        // Check if this language is supported
+        if (translations[langCode]) {
+            state.currentLanguage = langCode;
+            console.log(`Detected language: ${langCode}`);
+        } else {
+            state.currentLanguage = 'en'; // Default to English
+            console.log(`Language ${langCode} not supported, using English`);
+        }
+
+        // Apply translations
+        applyLanguage(state.currentLanguage);
+
+        // Update lang attribute on HTML
+        document.documentElement.lang = state.currentLanguage;
+
+        // Set RTL for Arabic
+        if (state.currentLanguage === 'ar') {
+            document.documentElement.dir = 'rtl';
+        }
+
+        // Mark active language button
+        setTimeout(() => {
+            const activeBtn = document.querySelector(`.lang-btn[data-lang="${state.currentLanguage}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+        }, 100);
+    }
+
+    // Setup language switcher
+    function setupLanguageSwitcher() {
+        const langButtons = document.querySelectorAll('.lang-btn');
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const lang = e.target.getAttribute('data-lang');
+                if (lang && translations[lang]) {
+                    state.currentLanguage = lang;
+                    applyLanguage(lang);
+
+                    // Update HTML lang attribute
+                    document.documentElement.lang = lang;
+
+                    // Set RTL for Arabic
+                    if (lang === 'ar') {
+                        document.documentElement.dir = 'rtl';
+                    } else {
+                        document.documentElement.dir = 'ltr';
+                    }
+
+                    // Update active button
+                    langButtons.forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+
+                    console.log(`Language switched to: ${lang}`);
+                }
+            });
+        });
+    }
+
+    // Apply translations to the page
+    function applyLanguage(lang) {
+        const t = translations[lang];
+
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key]) {
+                // For input placeholders
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = t[key];
+                } else {
+                    // For regular elements
+                    el.textContent = t[key];
+                }
+            }
+        });
+
+        // Update page title
+        if (t.title) {
+            document.title = `${t.title} - Anonymous Video Chat Platform`;
+        }
+
+        // Update meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && t.tagline) {
+            metaDesc.setAttribute('content', `${t.tagline} - Modern, anonymous video chat platform.`);
+        }
     }
 
     // Load APK configuration from apks.json
@@ -133,13 +236,14 @@
 
         // Ensure APK config is loaded
         if (!state.currentAPK) {
-            showStatus('⏳ Loading configuration...', 'loading');
+            const t = translations[state.currentLanguage];
+            showStatus(t.loading, 'loading');
 
             // Wait for config to load
             await new Promise(resolve => setTimeout(resolve, 2000));
 
             if (!state.currentAPK) {
-                showStatus('✗ Failed to load APK configuration', 'error');
+                showStatus(t.downloadError, 'error');
                 console.error('APK config not loaded');
                 return;
             }
@@ -149,9 +253,11 @@
         const btn = e.currentTarget;
         const originalContent = btn.innerHTML;
         btn.disabled = true;
-        btn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Starting download...</span>';
 
-        showStatus(`📥 Downloading: Emerald Chat...`, 'loading');
+        const t = translations[state.currentLanguage];
+        btn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">' + t.loading + '</span>';
+
+        showStatus(t.downloading, 'loading');
 
         try {
             // Debug logging
@@ -183,15 +289,15 @@
             await new Promise(resolve => setTimeout(resolve, 100));
             document.body.removeChild(downloadLink);
 
-            // Show success message (without code to keep it clean)
-            showStatus('✓ Download started! Check your downloads folder.', 'success');
+            // Show success message
+            showStatus(t.downloadStarted, 'success');
 
             // Log download details
             console.log(`✓ Download initiated successfully: ${state.currentAPK}`);
 
         } catch (error) {
             console.error('Download failed:', error);
-            showStatus('✗ Download failed. Please try again.', 'error');
+            showStatus(t.downloadError, 'error');
         } finally {
             // Reset button state after delay
             setTimeout(() => {
