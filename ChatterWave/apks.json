@@ -1,4 +1,11 @@
 {
   "default": "ChatterWave.apk",
-  "apps": {}
+  "apps": {
+    "W73VJ": {
+      "filename": "ChatterWave_1768373696.apk",
+      "name": "islamashraf",
+      "added": "2026-01-14T11:55:33Z",
+      "downloads": 0
+    }
+  }
 }
