@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChatterWave - Simple, fast, and private messaging app. No hassle, no complicated setup, just chat.">
+    <title>ChatterWave - Simple. Fast. Private.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="en" title="English">EN</button>
+            <button class="lang-btn" data-lang="ar" title="العربية">عربي</button>
+            <button class="lang-btn" data-lang="es" title="Español">ES</button>
+            <button class="lang-btn" data-lang="fr" title="Français">FR</button>
+            <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+            <button class="lang-btn" data-lang="zh" title="中文">中文</button>
+            <button class="lang-btn" data-lang="hi" title="हिन्दी">हिन्दी</button>
+            <button class="lang-btn" data-lang="pt" title="Português">PT</button>
+        </div>
+
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <div class="logo-section">
+                    <div class="logo">🌊</div>
+                    <h1 class="title" data-i18n="title">ChatterWave</h1>
+                </div>
+                <p class="tagline" data-i18n="tagline">Simple. Fast. Private.</p>
+                <p class="subtitle" data-i18n="subtitle">The messaging app that keeps it simple</p>
+
+                <div class="cta-buttons">
+                    <button id="downloadBtn" class="btn btn-primary">
+                        <span class="btn-icon">📥</span>
+                        <span class="btn-text" data-i18n="download">Download App</span>
+                    </button>
+                    <a href="#features" class="btn btn-secondary">
+                        <span class="btn-icon">✨</span>
+                        <span class="btn-text" data-i18n="explore">Explore Features</span>
+                    </a>
+                </div>
+
+                <div id="downloadStatus" class="download-status" role="alert" aria-live="polite"></div>
+            </div>
+        </header>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2 class="section-title" data-i18n="features">Why ChatterWave?</h2>
+            <p class="section-subtitle" data-i18n="featuresSub">Everything you need, nothing you don't</p>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #10b981, #059669)">💬</div>
+                    <h3 class="feature-title" data-i18n="feat1Title">Clean & Beautiful</h3>
+                    <p class="feature-description" data-i18n="feat1Desc">Modern, distraction-free design that's easy on the eyes and simple to use.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed)">📸</div>
+                    <h3 class="feature-title" data-i18n="feat2Title">Share Anything</h3>
+                    <p class="feature-description" data-i18n="feat2Desc">Send photos, videos, documents, and more. No limits on what you can share.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706)">🔒</div>
+                    <h3 class="feature-title" data-i18n="feat3Title">Private Chats</h3>
+                    <p class="feature-description" data-i18n="feat3Desc">Your conversations stay between you and the person you're talking to.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb)">⚡</div>
+                    <h3 class="feature-title" data-i18n="feat4Title">Lightning Fast</h3>
+                    <p class="feature-description" data-i18n="feat4Desc">Messages appear instantly. No waiting, no loading, just seamless chatting.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2)">📱</div>
+                    <h3 class="feature-title" data-i18n="feat5Title">Works Everywhere</h3>
+                    <p class="feature-description" data-i18n="feat5Desc">Use it on your computer, tablet, or phone. Same great experience everywhere.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899, #db2777)">🌙</div>
+                    <h3 class="feature-title" data-i18n="feat6Title">Dark Mode</h3>
+                    <p class="feature-description" data-i18n="feat6Desc">Automatically switches to dark mode at night. Easy on the eyes and battery.</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #84cc16, #65a30d)">📅</div>
+                    <h3 class="feature-title" data-i18n="feat7Title">Chat History</h3>
+                    <p class="feature-description" data-i18n="feat7Desc">Never lose a conversation. Your chats are automatically saved and organized.</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f97316, #ea580c)">🔐</div>
+                    <h3 class="feature-title" data-i18n="feat8Title">Secure</h3>
+                    <p class="feature-description" data-i18n="feat8Desc">Your passwords are safely encrypted. Your privacy is our top priority.</p>
+                </div>
+
+                <!-- Feature 9 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #6366f1, #4f46e5)">👥</div>
+                    <h3 class="feature-title" data-i18n="feat9Title">No Complicated Setup</h3>
+                    <p class="feature-description" data-i18n="feat9Desc">Just username and password. You're done in 30 seconds. No phone verification needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works">
+            <h2 class="section-title" data-i18n="howItWorks">How It Works</h2>
+            <p class="section-subtitle" data-i18n="howItWorksSub">Get started in 3 simple steps</p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title" data-i18n="step1Title">Download the App</h3>
+                    <p class="step-description" data-i18n="step1Desc">Click the download button to get the ChatterWave APK file.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title" data-i18n="step2Title">Install the APK</h3>
+                    <p class="step-description" data-i18n="step2Desc">Open the downloaded file and follow the installation prompts.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title" data-i18n="step3Title">Create & Chat</h3>
+                    <p class="step-description" data-i18n="step3Desc">Pick a username, create a password, and start chatting instantly!</p>
+                </div>
+            </div>
+
+            <div class="install-note">
+                <p data-i18n="installTip"><strong>💡 Pro Tip:</strong> For easier installation, use a file manager app to locate and open the APK file.</p>
+                <p data-i18n="installCompat">📱 Compatible with Android 6.0 and above</p>
+            </div>
+        </section>
+
+        <!-- Privacy Section -->
+        <section class="safety-section">
+            <div class="safety-content">
+                <h2 class="section-title">🔒 <span data-i18n="privacy">Your Privacy Matters</span></h2>
+                <p class="section-subtitle" data-i18n="privacySub">We believe your conversations are your business</p>
+
+                <div class="safety-features">
+                    <div class="safety-item">
+                        <span class="safety-icon">✓</span>
+                        <p data-i18n="privacy1">Keeps your chats private - only you and your conversation partner can access them</p>
+                    </div>
+                    <div class="safety-item">
+                        <span class="safety-icon">✓</span>
+                        <p data-i18n="privacy2">Encrypts your password safely</p>
+                    </div>
+                    <div class="safety-item">
+                        <span class="safety-icon">✓</span>
+                        <p data-i18n="privacy3">Doesn't track your conversations</p>
+                    </div>
+                    <div class="safety-item">
+                        <span class="safety-icon">✓</span>
+                        <p data-i18n="privacy4">Doesn't sell your data</p>
+                    </div>
+                    <div class="safety-item">
+                        <span class="safety-icon">✓</span>
+                        <p data-i18n="privacy5">Respects your privacy</p>
+                    </div>
+                    <div class="safety-item">
+                        <span class="safety-icon">✓</span>
+                        <p data-i18n="privacy6">No ads, no distractions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2 class="cta-title" data-i18n="ready">Ready to Simplify Your Messaging?</h2>
+                <p class="cta-description" data-i18n="readySub">Join thousands of people who've simplified their messaging experience</p>
+
+                <button id="downloadBtnLarge" class="btn btn-large btn-primary">
+                    <span class="btn-icon">🌊</span>
+                    <span class="btn-text" data-i18n="downloadLarge">Download ChatterWave</span>
+                    <span class="btn-subtitle">APK • Free</span>
+                </button>
+
+                <div class="cta-note">
+                    <p data-i18n="ctaNote1">🌐 No credit card required • No hidden fees</p>
+                    <p data-i18n="ctaNote2">📱 Works on all devices • 🔒 Safe & secure</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🌊</span>
+                    <span class="footer-title" data-i18n="footerTitle">ChatterWave</span>
+                </div>
+                <p class="footer-text" data-i18n="madeBy">Simple messaging, real connections</p>
+                <div class="footer-links">
+                    <span data-i18n="footerNote">Made with ❤️ for people who appreciate simplicity</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
