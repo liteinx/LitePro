@@ -1,0 +1,17 @@
+{
+  "default": {
+    "title": "Watch Together - Default Room",
+    "description": "Watch videos with friends and family in real-time",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  },
+  "rooms": {
+    "ABC12": {
+      "title": "Movie Night",
+      "description": "Watch movies together with friends",
+      "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "createdBy": "Admin",
+      "created": "2026-03-23T00:00:00Z",
+      "views": 0
+    }
+  }
+}
