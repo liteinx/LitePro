@@ -225,21 +225,37 @@ const clothes = [
   { name:"Vestido midi de palmeras", desc:"Estampado tropical con falda asimétrica",
     was:1199, now:599, img:"pexels-walter-alejandro-228509595-31589287.jpg", icon:"👗", color:"#d6f0d2" }
 ];
+// ★ Edit this: the folder where you upload the ACCESSORY photos (must end with "/")
+const ACC_IMAGE_BASE_URL = "https://liteinx.github.io/LitePro/farfetch/imgs/accessories/";
+
 const acc = [
-  ["Bolso tote","Piel vegana",1399,699,"👜","#ffd9c2"],
-  ["Aretes dorados","Baño de oro",399,199,"💍","#fff0b8"],
-  ["Lentes de sol","Protección UV",599,299,"🕶️","#c7e9f7"],
-  ["Collar de perlas","Perla cultivada",549,329,"📿","#ffd1e6"],
-  ["Cinturón trenzado","Cuero genuino",449,269,"🎀","#d6f0d2"],
-  ["Pañuelo de seda","Estampado FarFetchl",349,175,"🧣","#e8d5f7"],
-  ["Sombrero de palma","Hecho a mano",699,419,"👒","#ffe7ad"],
-  ["Reloj minimalista","Correa de malla",1299,779,"⌚","#d9d9e8"]
+  { name:"Bolsos crossbody de piel", desc:"Con asa y correa ajustable, en varios colores",
+    was:1599, now:799, img:"pexels-denys-9327162.jpg", icon:"👜", color:"#ffd9c2" },
+
+  { name:"Bolsos barril vino y topo", desc:"Doble asa y correa desmontable",
+    was:1299, now:649, img:"pexels-dhanno-22434759.jpg", icon:"👜", color:"#ffd1e6" },
+
+  { name:"Set de aretes y pulsera dorada", desc:"Arracadas gruesas y pulsera con dijes",
+    was:699, now:349, img:"pexels-harper-sunday-12753202.jpg", icon:"💍", color:"#fff0b8" },
+
+  { name:"Collar de eslabones dorados", desc:"Cadena gruesa con acabado brillante",
+    was:549, now:329, img:"pexels-jonathanborba-28900494.jpg", icon:"📿", color:"#ffe7ad" },
+
+  { name:"Set botines, mini bolso y cinturón", desc:"Piel negra y café con detalles dorados",
+    was:2999, now:1499, img:"pexels-jose-martin-segura-benites-1422456152-27503501.jpg", icon:"👢", color:"#d9d9e8" },
+
+  { name:"Bolso tote y botines con hebillas", desc:"Piel color caramelo, juego combinado",
+    was:2799, now:1399, img:"pexels-pedro-furtado-2149998739-31450739.jpg", icon:"👜", color:"#ffd9c2" },
+
+  { name:"Bolso de hombro y zapatilla vino", desc:"Piel con bolsillos y zapatilla de tacón",
+    was:2299, now:1149, img:"pexels-pedrofurtadoo-31451028.jpg", icon:"👠", color:"#e8d5f7" },
+
+  { name:"Zapatillas blancas con brillo", desc:"Punta fina y correa con cristales",
+    was:1199, now:599, img:"pexels-yves-matuba-50261060-28651548.jpg", icon:"👠", color:"#efe6dc" }
 ];
 // Pega aquí la URL de la foto de cada producto (clave = nombre exacto del producto).
 // Si falta o no carga, se muestra el emoji.
-const IMAGES = {
-  // "Vestido FarFetchl midi": "https://tu-dominio.com/img/vestido.jpg",
-};
+
 const mxn = n => "$" + n.toLocaleString("es-MX") + " MXN";
 
 function render(list, el){

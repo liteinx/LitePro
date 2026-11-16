@@ -204,15 +204,34 @@ const clothes = [
   { name:"Abrigo largo", desc:"Lana mezclada", was:2199, now:1099, img:"ropa-07.jpg", icon:"🧥", color:"#d9d9e8" },
   { name:"Top satinado", desc:"Tirantes finos", was:499, now:249, img:"ropa-08.jpg", icon:"👙", color:"#ffc9d6" }
 ];
+
+// ★ Edit this: the folder where you upload the ACCESSORY photos (must end with "/")
+const ACC_IMAGE_BASE_URL = "https://your-domain.com/accessories/";
+
 const acc = [
-  { name:"Bolso tote", desc:"Piel vegana", was:1399, now:699, img:"accesorio-01.jpg", icon:"👜", color:"#ffd9c2" },
-  { name:"Aretes dorados", desc:"Baño de oro", was:399, now:199, img:"accesorio-02.jpg", icon:"💍", color:"#fff0b8" },
-  { name:"Lentes de sol", desc:"Protección UV", was:599, now:299, img:"accesorio-03.jpg", icon:"🕶️", color:"#c7e9f7" },
-  { name:"Collar de perlas", desc:"Perla cultivada", was:549, now:329, img:"accesorio-04.jpg", icon:"📿", color:"#ffd1e6" },
-  { name:"Cinturón trenzado", desc:"Cuero genuino", was:449, now:269, img:"accesorio-05.jpg", icon:"🎀", color:"#d6f0d2" },
-  { name:"Pañuelo de seda", desc:"Estampado floral", was:349, now:175, img:"accesorio-06.jpg", icon:"🧣", color:"#e8d5f7" },
-  { name:"Sombrero de palma", desc:"Hecho a mano", was:699, now:419, img:"accesorio-07.jpg", icon:"👒", color:"#ffe7ad" },
-  { name:"Reloj minimalista", desc:"Correa de malla", was:1299, now:779, img:"accesorio-08.jpg", icon:"⌚", color:"#d9d9e8" }
+  { name:"Bolsos crossbody de piel", desc:"Con asa y correa ajustable, en varios colores",
+    was:1599, now:799, img:"pexels-denys-9327162.jpg", icon:"👜", color:"#ffd9c2" },
+
+  { name:"Bolsos barril vino y topo", desc:"Doble asa y correa desmontable",
+    was:1299, now:649, img:"pexels-dhanno-22434759.jpg", icon:"👜", color:"#ffd1e6" },
+
+  { name:"Set de aretes y pulsera dorada", desc:"Arracadas gruesas y pulsera con dijes",
+    was:699, now:349, img:"pexels-harper-sunday-12753202.jpg", icon:"💍", color:"#fff0b8" },
+
+  { name:"Collar de eslabones dorados", desc:"Cadena gruesa con acabado brillante",
+    was:549, now:329, img:"pexels-jonathanborba-28900494.jpg", icon:"📿", color:"#ffe7ad" },
+
+  { name:"Set botines, mini bolso y cinturón", desc:"Piel negra y café con detalles dorados",
+    was:2999, now:1499, img:"pexels-jose-martin-segura-benites-1422456152-27503501.jpg", icon:"👢", color:"#d9d9e8" },
+
+  { name:"Bolso tote y botines con hebillas", desc:"Piel color caramelo, juego combinado",
+    was:2799, now:1399, img:"pexels-pedro-furtado-2149998739-31450739.jpg", icon:"👜", color:"#ffd9c2" },
+
+  { name:"Bolso de hombro y zapatilla vino", desc:"Piel con bolsillos y zapatilla de tacón",
+    was:2299, now:1149, img:"pexels-pedrofurtadoo-31451028.jpg", icon:"👠", color:"#e8d5f7" },
+
+  { name:"Zapatillas blancas con brillo", desc:"Punta fina y correa con cristales",
+    was:1199, now:599, img:"pexels-yves-matuba-50261060-28651548.jpg", icon:"👠", color:"#efe6dc" }
 ];
 const mxn = n => "$" + n.toLocaleString("es-MX") + " MXN";
 
