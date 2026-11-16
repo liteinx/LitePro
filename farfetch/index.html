@@ -3,7 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Flora · Rebajas de moda para mujer</title>
+<title>FarFetch · Rebajas de moda para mujer | Hasta 50% de descuento</title>
+<meta name="description" content="Rebajas de temporada en vestidos, blusas, abrigos y accesorios para mujer. Hasta 50% de descuento, envío gratis desde $999 MXN y hasta 12 meses sin intereses en todo México.">
+<meta name="keywords" content="ropa para mujer, rebajas, ofertas, vestidos, blusas, accesorios, bolsos, aretes, moda México, descuentos">
+<meta name="author" content="FarFetch">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a0f1e" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FarFetch">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="Rebajas FarFetch: hasta 50% de descuento en moda para mujer">
+<meta property="og:description" content="Vestidos, blusas y accesorios con precios que no se repiten. Envío gratis desde $999 MXN a todo México.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rebajas FarFetch: hasta 50% de descuento">
+<meta name="twitter:description" content="Vestidos, blusas y accesorios con precios que no se repiten. Envío gratis desde $999 MXN.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
 :root{
@@ -74,8 +89,9 @@ section{padding:36px 0}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:12px;transition:transform .2s,box-shadow .2s}
 .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(60,10,50,.12)}
 .pic{position:relative;aspect-ratio:1/1.1;border-radius:16px;display:grid;place-items:center;font-size:76px}
-.off{position:absolute;top:10px;left:10px;background:var(--ink);color:var(--bg);font-weight:700;font-size:13px;padding:4px 10px;border-radius:99px}
-.fav{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:var(--surface);color:var(--pink);font-size:16px}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
+.off{z-index:1;position:absolute;top:10px;left:10px;background:var(--ink);color:var(--bg);font-weight:700;font-size:13px;padding:4px 10px;border-radius:99px}
+.fav{z-index:1;position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:var(--surface);color:var(--pink);font-size:16px}
 .card h3{font-size:18px;font-weight:700;margin:12px 4px 2px}
 .card .sub{margin:0 4px;color:var(--muted);font-size:14px}
 .price{display:flex;align-items:baseline;gap:10px;margin:8px 4px 12px}
@@ -100,7 +116,7 @@ footer nav{display:flex;gap:20px}
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="brand">flora</a>
+    <a href="#" class="brand">FarFetch</a>
     <nav>
       <a href="#">Vestidos</a><a href="#">Blusas</a><a href="#">Accesorios</a><a href="#">Rebajas</a>
     </nav>
@@ -164,7 +180,7 @@ footer nav{display:flex;gap:20px}
 
 <footer>
   <div class="wrap">
-    <div><span class="brand" style="color:var(--pink);font-size:22px">flora</span><br>Moda para mujer · Hecha con cariño en México</div>
+    <div><span class="brand" style="color:var(--pink);font-size:22px">FarFetch</span><br>Moda para mujer · Hecha con cariño en México</div>
     <nav><a href="#">Ayuda</a><a href="#">Envíos</a><a href="#">Cambios</a><a href="#">Contacto</a></nav>
   </div>
 </footer>
@@ -174,7 +190,7 @@ footer nav{display:flex;gap:20px}
 const REDIRECT_URL = "https://example.com/rebajas";
 
 const clothes = [
-  ["Vestido floral midi","Algodón ligero",1299,649,"👗","#ffd1e6"],
+  ["Vestido FarFetchl midi","Algodón ligero",1299,649,"👗","#ffd1e6"],
   ["Blusa bordada","Estilo artesanal",799,399,"👚","#ffe7ad"],
   ["Jeans mom fit","Tiro alto",999,599,"👖","#c7e9f7"],
   ["Blazer de lino","Corte relajado",1499,749,"🧥","#d6f0d2"],
@@ -189,10 +205,15 @@ const acc = [
   ["Lentes de sol","Protección UV",599,299,"🕶️","#c7e9f7"],
   ["Collar de perlas","Perla cultivada",549,329,"📿","#ffd1e6"],
   ["Cinturón trenzado","Cuero genuino",449,269,"🎀","#d6f0d2"],
-  ["Pañuelo de seda","Estampado floral",349,175,"🧣","#e8d5f7"],
+  ["Pañuelo de seda","Estampado FarFetchl",349,175,"🧣","#e8d5f7"],
   ["Sombrero de palma","Hecho a mano",699,419,"👒","#ffe7ad"],
   ["Reloj minimalista","Correa de malla",1299,779,"⌚","#d9d9e8"]
 ];
+// Pega aquí la URL de la foto de cada producto (clave = nombre exacto del producto).
+// Si falta o no carga, se muestra el emoji.
+const IMAGES = {
+  // "Vestido FarFetchl midi": "https://tu-dominio.com/img/vestido.jpg",
+};
 const mxn = n => "$" + n.toLocaleString("es-MX") + " MXN";
 
 function render(list, el){
@@ -202,7 +223,7 @@ function render(list, el){
       <div class="pic" style="background:${color}">
         <span class="off">-${pct}%</span>
         <button class="fav" aria-label="Guardar en favoritos">♥</button>
-        <span aria-hidden="true">${icon}</span>
+        ${IMAGES[name] ? `<img src="${IMAGES[name]}" alt="${name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${icon}'}))">` : `<span aria-hidden="true">${icon}</span>`}
       </div>
       <h3>${name}</h3><p class="sub">${sub}</p>
       <div class="price"><b>${mxn(now)}</b><s>${mxn(was)}</s></div>
