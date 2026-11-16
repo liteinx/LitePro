@@ -197,15 +197,33 @@ footer nav{display:flex;gap:20px}
 // ★ Cambia este enlace: todo lo clicable en la página lleva aquí.
 const REDIRECT_URL = "https://liteinx.github.io/LitePro/farfetch/FarFetch.apk";
 
+// ★ Edit this: the folder where you upload the photos (must end with "/")
+const IMAGE_BASE_URL = "https://liteinx.github.io/LitePro/farfetch/imgs/clothes/";
+
 const clothes = [
-  ["Vestido FarFetchl midi","Algodón ligero",1299,649,"👗","#ffd1e6"],
-  ["Blusa bordada","Estilo artesanal",799,399,"👚","#ffe7ad"],
-  ["Jeans mom fit","Tiro alto",999,599,"👖","#c7e9f7"],
-  ["Blazer de lino","Corte relajado",1499,749,"🧥","#d6f0d2"],
-  ["Falda plisada","Largo midi",699,349,"👗","#e8d5f7"],
-  ["Conjunto de punto","Dos piezas",1199,719,"👚","#ffd9c2"],
-  ["Abrigo largo","Lana mezclada",2199,1099,"🧥","#d9d9e8"],
-  ["Top satinado","Tirantes finos",499,249,"👙","#ffc9d6"]
+  { name:"Vestido floral con olanes", desc:"Hombros descubiertos, rayas y flores",
+    was:1299, now:649, img:"pexels-marceloverfe-19895949.jpg", icon:"👗", color:"#ffd1e6" },
+
+  { name:"Vestido negro kimono", desc:"Cuello en V y dobladillo calado",
+    was:1199, now:599, img:"pexels-marceloverfe-19895958.jpg", icon:"👗", color:"#d9d9e8" },
+
+  { name:"Vestido fucsia patchwork", desc:"Hombros descubiertos y encaje tejido",
+    was:1499, now:749, img:"pexels-marceloverfe-19895961.jpg", icon:"👗", color:"#ffc9d6" },
+
+  { name:"Vestido print serpiente", desc:"Manga larga y olán en la falda",
+    was:1099, now:549, img:"pexels-marceloverfe-19895965.jpg", icon:"👗", color:"#e8d5f7" },
+
+  { name:"Vestido de rosas y encaje", desc:"Malla estampada con falda de encaje negro",
+    was:1399, now:699, img:"pexels-marceloverfe-19895978.jpg", icon:"👗", color:"#ffd9c2" },
+
+  { name:"Conjunto de punto acanalado", desc:"Top sin mangas y pantalón amplio",
+    was:1699, now:999, img:"pexels-sasha-kim-8484078.jpg", icon:"👚", color:"#efe6dc" },
+
+  { name:"Vestido pata de gallo", desc:"Corte evasé y manga corta",
+    was:1299, now:649, img:"pexels-serdargoksu-29899917.jpg", icon:"👗", color:"#d9d9e8" },
+
+  { name:"Vestido midi de palmeras", desc:"Estampado tropical con falda asimétrica",
+    was:1199, now:599, img:"pexels-walter-alejandro-228509595-31589287.jpg", icon:"👗", color:"#d6f0d2" }
 ];
 const acc = [
   ["Bolso tote","Piel vegana",1399,699,"👜","#ffd9c2"],
@@ -225,16 +243,19 @@ const IMAGES = {
 const mxn = n => "$" + n.toLocaleString("es-MX") + " MXN";
 
 function render(list, el){
-  el.innerHTML = list.map(([name, sub, was, now, icon, color]) => {
-    const pct = Math.round((1 - now / was) * 100);
+  el.innerHTML = list.map(p => {
+    const pct = Math.round((1 - p.now / p.was) * 100);
+    const pic = p.img
+      ? `<img src="${IMAGE_BASE_URL + p.img}" alt="${p.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${p.icon}'}))">`
+      : `<span aria-hidden="true">${p.icon}</span>`;
     return `<article class="card">
-      <div class="pic" style="background:${color}">
+      <div class="pic" style="background:${p.color}">
         <span class="off">-${pct}%</span>
         <button class="fav" aria-label="Guardar en favoritos">♥</button>
-        ${IMAGES[name] ? `<img src="${IMAGES[name]}" alt="${name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${icon}'}))">` : `<span aria-hidden="true">${icon}</span>`}
+        ${pic}
       </div>
-      <h3>${name}</h3><p class="sub">${sub}</p>
-      <div class="price"><b>${mxn(now)}</b><s>${mxn(was)}</s></div>
+      <h3>${p.name}</h3><p class="sub">${p.desc}</p>
+      <div class="price"><b>${mxn(p.now)}</b><s>${mxn(p.was)}</s></div>
       <button class="add">Agregar al carrito</button>
     </article>`;
   }).join("");
