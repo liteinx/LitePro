@@ -258,11 +258,12 @@ const acc = [
 
 const mxn = n => "$" + n.toLocaleString("es-MX") + " MXN";
 
-function render(list, el){
+function render(list, el, base){
   el.innerHTML = list.map(p => {
     const pct = Math.round((1 - p.now / p.was) * 100);
     const pic = p.img
-      ? `<img src="${IMAGE_BASE_URL + p.img}" alt="${p.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${p.icon}'}))">`
+      ? `<img src="${base + p.img}" alt="${p.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${p.icon}'}))">`
+  : `<span aria-hidden="true">${p.icon}</span>`;
       : `<span aria-hidden="true">${p.icon}</span>`;
     return `<article class="card">
       <div class="pic" style="background:${p.color}">
@@ -276,8 +277,8 @@ function render(list, el){
     </article>`;
   }).join("");
 }
-render(clothes, document.getElementById("clothes"));
-render(acc, document.getElementById("acc"));
+render(clothes, document.getElementById("clothes"), IMAGE_BASE_URL);
+render(acc, document.getElementById("acc"), ACC_IMAGE_BASE_URL);
 
 // Todo clic en la página redirige al mismo enlace.
 document.addEventListener("click", e => {
